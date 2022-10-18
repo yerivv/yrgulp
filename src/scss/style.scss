@@ -1,0 +1,13 @@
+@import "_reset";
+
+.section {
+    width: 100%;
+    .list {
+        display: flex;
+        align-items: center;
+        padding: 50px;
+        li {
+            margin-left: 50px;
+        }
+    }
+}
