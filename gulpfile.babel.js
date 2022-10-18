@@ -81,10 +81,10 @@ const validateHtml = () => gulp
 
 const gbrowserSync = () =>
     browserSync.init({
-        //port: 5000,
+        port: 4000,
         startPath: 'html/index.html',
         server: {
-            baseDir: "./build",
+            baseDir: "build/",
             directory: true,
         }
     });
