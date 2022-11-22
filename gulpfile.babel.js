@@ -21,7 +21,7 @@ const routes = {
         watch: "src/**/*.html",
         src: "src/html/**/*.html",
         include: "src/html/include/*",
-        dest: "build/html"
+        dest: "build/"
     },
     imgs: {
         src: "src/imgs/**/*",
@@ -68,7 +68,7 @@ const gscss = () => gulp
 const gjs = () => gulp
     .src(routes.js.src)
     .pipe(babel())
-    .pipe(concat("main.js"))
+    .pipe(concat("util.js"))
     .pipe(debug({title: 'debug js:'}))
     .pipe(gulp.dest(routes.js.dest));
 
@@ -82,9 +82,10 @@ const validateHtml = () => gulp
 const gbrowserSync = () =>
     browserSync.init({
         port: 4000,
-        startPath: 'html/index.html',
+        watch: true,
+        startPath: 'index.html',
         server: {
-            baseDir: "build/",
+            baseDir: 'build/',
             directory: true,
         }
     });

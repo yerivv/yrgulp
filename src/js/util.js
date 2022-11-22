@@ -1,3 +1,14 @@
-const rand = () => Math.floor(Math.random() * 100) +1;
+//modal
+let count = 0;
+count = 10;
+console.log(count);
 
-console.log(rand());
+const modalFull = {
+    show(obj) {
+        let modal = document.getElementsByClassName('modal');
+
+        if(modal.children('id') == obj){
+            modal.classList.add('show');
+        }
+    }
+}

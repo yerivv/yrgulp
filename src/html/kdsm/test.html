@@ -2,14 +2,13 @@
 <html lang="ko">
 <head>
     @@include('@@webRoot/include/head.html',{
-        "title":"메인>메인"
+        "title":"KDSM 테스트"
     })
-    <script src="@@webRoot/js/util.js"></script>
 </head>
 <body>
-    <a href="" onclick="modalFull('id1')">상품상세보기</a>
+    <button type="button" onclick="modalFull.show('id1')">상품상세보기</button>
 
-    <div class="modal-full">
+    <div class="modal modal-full">
         <div class="box" id="id1">
             <div style="height:800px;background-color:#f60">
                 <a href="/">이력보기</a>
