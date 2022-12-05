@@ -1,14 +1,22 @@
-//modal
-let count = 0;
-count = 10;
-console.log(count);
-
-const modalFull = {
-    show(obj) {
-        let modal = document.getElementsByClassName('modal');
-
-        if(modal.children('id') == obj){
-            modal.classList.add('show');
-        }
+const toobar = document.querySelector('toolbar');
+document.addEventListener("scroll", (event) => {
+    if(document.scrollTop > 0) {
+        toobar.classList.add('scroll');
+    } else {
+        
     }
-}
+});
+
+// document.addEventListener('scroll', function() {
+//     if (beforePosition == 0) {
+//         // if(beforePosition < afterPosition ){
+//         //     console.log('아래로');
+//         // } else {
+//         //     console.log('위로');
+//         // }
+//         toobar.classList.remove('scroll');
+//     } else {
+//         toobar.classList.add('scroll');
+//     }
+//     beforePosition = afterPosition;
+// });

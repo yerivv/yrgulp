@@ -12,7 +12,6 @@ import fileinclude from "gulp-file-include";
 import changed from "gulp-changed"; //파일변경된 것 감지
 import { htmlValidator } from 'gulp-w3c-html-validator'; //build 유효성 검사 (로컬은 필요 없고, build하여 나갈때만 필요)
 import browserSync from "browser-sync";
-import inquirer from "inquirer";
 
 const sass = gulp_sass(node_sass);
 
@@ -29,13 +28,17 @@ const routes = {
     },
     scss: {
         watch: "src/scss/**/*.scss",
-        src: "src/scss/style.scss",
+        src: "src/scss/*.scss",
         dest: "build/css"
     },
     js: {
         watch: "src/js/*.js",
         src: "src/js/*.js",
         dest: "build/js"
+    },
+    fonts: {
+        src: "src/font/**/*",
+        dest: "build/fonts"
     }
 }
 
@@ -79,6 +82,10 @@ const validateHtml = () => gulp
     .pipe(htmlValidator.analyzer({ ignoreMessages: /^Duplicate ID/ }))
     .pipe(htmlValidator.reporter());
 
+const gfonts = () => gulp
+    .src(routes.fonts.src)
+    .pipe(gulp.dest(routes.fonts.dest));
+
 const gbrowserSync = () =>
     browserSync.init({
         port: 4000,
@@ -95,11 +102,12 @@ const watch = () => {
     gulp.watch(routes.imgs.src, gimgs);
     gulp.watch(routes.scss.watch, gscss);
     gulp.watch(routes.js.watch, gjs);
+    gulp.watch(routes.fonts.src, gfonts);
 };
 
 const clean = () => del(["build/"]);
 
-const prepare = gulp.series([clean, gimgs]);
+const prepare = gulp.series([clean, gimgs, gfonts]);
 const assets = gulp.series([ghtml, gscss, gjs, validateHtml]);
 const live = gulp.parallel([gbrowserSync, watch]);
 

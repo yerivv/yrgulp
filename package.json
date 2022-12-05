@@ -28,6 +28,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^4.0.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-font": "^1.0.4",
     "gulp-image": "^6.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",

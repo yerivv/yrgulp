@@ -1,3 +1,3 @@
-const {rand} = require('./util');
+// const {rand} = require('./util');
 
-module.exports = {rand};
+// module.exports = {rand};

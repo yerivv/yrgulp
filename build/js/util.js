@@ -1,23 +1,23 @@
+// const {rand} = require('./util');
+// module.exports = {rand};
+"use strict";
 "use strict";
 
-var _require = require('./util'),
-    rand = _require.rand;
-
-module.exports = {
-  rand: rand
-};
-"use strict";
-
-//modal
-var count = 0;
-count = 10;
-console.log(count);
-var modalFull = {
-  show: function show(obj) {
-    var modal = document.getElementsByClassName('modal');
-
-    if (modal.children('id') == obj) {
-      modal.classList.add('show');
-    }
-  }
-};
+var toobar = document.querySelector('toolbar');
+document.addEventListener("scroll", function (event) {
+  if (document.scrollTop > 0) {
+    toobar.classList.add('scroll');
+  } else {}
+}); // document.addEventListener('scroll', function() {
+//     if (beforePosition == 0) {
+//         // if(beforePosition < afterPosition ){
+//         //     console.log('아래로');
+//         // } else {
+//         //     console.log('위로');
+//         // }
+//         toobar.classList.remove('scroll');
+//     } else {
+//         toobar.classList.add('scroll');
+//     }
+//     beforePosition = afterPosition;
+// });
