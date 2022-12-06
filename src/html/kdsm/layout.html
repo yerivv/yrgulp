@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <div id="wrap">
+    <div id="wrap" class="wrap">
         <!-- 상단 -->
         <div id="header">
             <h1><a href="#"><img src="@@webRoot/imgs/test/logo.png" alt="광동제약"></a></h1>
@@ -17,13 +17,21 @@
                 <button type="button" class="btn_search">검색</button>
             </div>
             <div class="top_btn">
-                <a href="#" class="btn btn_cart">장바구니<span class="count number">240</span></a>
-                <a href="#" class="btn btn_menu">카테고리보기</a>
+                <a href="#" class="btn btn_cart">장바구니<span class="label_count">240</span></a>
+                <a href="#" class="btn btn_category">카테고리보기</a>
             </div>
+            <!-- 카테고리 -->
+            <div class="modal modal_category">
+                <div class="head">마이페이지</div>
+                <div class="contents">
+                    내용
+                </div>
+            </div>
+            <!-- //간편장부 -->
         </div><!-- //topper -->
         <div id="gnb">
             <ul>
-                <li><a href="#">추천상품<span class="count number">32</span></a></li>
+                <li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
                 <li class="active"><a href="#">광동전용관</a></li>
                 <li><a href="#">브랜드관</a></li>
                 <li><a href="#">주문/배송</a></li>
@@ -32,8 +40,8 @@
             </ul>
         </div>
         <!-- 컨텐츠 박스 영역 -->
-        <div id="container" style="height:500px;">
-            11
+        <div id="container">
+            컨텐츠 내용
         </div><!-- //container -->	
 
         <div id="floating">
@@ -44,15 +52,42 @@
                 <a href="#" class="btn btn_top">TOP</a>
             </div>
         </div>
+
         <div id="toolbar">
             <ul>
                 <li class="home active"><a href="#">홈</a></li>
                 <li class="repurchase"><a href="#">재구매</a></li>
                 <li class="ledger"><a href="#">간편장부</a></li>
-                <li class="mypage"><a href="#">마이페이지</a></li>
+                <li class="mypage"><a href="javascript:void(0)" onclick="modalFull('modal_mypage');">마이페이지</a></li>
                 <li class="allmenu"><a href="#">전체메뉴</a></li>
             </ul>
         </div>
+        <!-- 간편장부 -->
+        <div class="modal modal_ledger">
+            홍길동님
+        </div>
+        <!-- //간편장부 -->
+        <!-- 마이페이지 -->
+        <div class="modal_full modal_mypage">
+            <div class="head">마이페이지
+                <div class="close" onclick="modalClose('modal_mypage');">닫기</div>
+            </div>
+            <div class="contents">
+                <div style="height:300px;background-color:#ddd">내용</div>
+                <div style="height:300px;background-color:#eee">내용</div>
+                <div style="height:300px;background-color:#ddd">내용</div>
+                <div style="height:300px;background-color:#eee">내용</div>
+            </div>
+        </div>
+        <!-- //마이페이지 -->
+        <!-- 전체메뉴 -->
+        <div class="modal_full">
+            <div class="head">전체메뉴</div>
+            <div class="contents">
+                내용
+            </div>
+        </div>
+        <!-- //전체메뉴 -->
         
         <!-- 하단 -->
         <div id="footer">
@@ -94,5 +129,6 @@
         </div><!-- //footer -->
     </div><!-- //wrap -->
 
+    <script src="@@webRoot/js/util.js"></script>
 </body>
 </html>
