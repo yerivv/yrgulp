@@ -59,20 +59,62 @@ function cateReady() {
   }
 }
 
-function modalFull(a) {
-  var target = document.querySelector('.' + a);
+function isModal() {
+  var body = document.querySelector('body');
+  var modals = document.querySelectorAll('#modal.open');
 
-  if (target.classList.contains('open')) {
-    target.closest('#wrap').classList.remove('ismodal');
-    target.classList.remove('open');
+  if (modals.length == 0) {
+    body.classList.remove('ismodal');
+    body.removeEventListener('scroll touchmove mousewheel', null);
   } else {
-    target.closest('#wrap').classList.add('ismodal');
-    target.classList.add('open');
+    body.classList.add('ismodal');
   }
+}
+
+function modalOpen(a) {
+  var target = document.querySelector('.' + a);
+  target.closest('body, html').classList.add('ismodal');
+  target.classList.add('open');
+  target.closest('body, html').addEventListener('scroll touchmove mousewheel', function (e) {
+    e.preventDefault();
+  });
 }
 
 function modalClose(a) {
   var target = document.querySelector('.' + a);
-  target.closest('#wrap').classList.remove('ismodal');
   target.classList.remove('open');
+  isModal();
+}
+
+function floatingMore(a) {
+  var wrap = a.closest('.floating_btn');
+  var text = wrap.querySelector('.more');
+
+  if (wrap.classList.contains('active')) {
+    wrap.classList.remove('active');
+    text.innerText = '닫기';
+  } else {
+    wrap.classList.add('active');
+    text.innerText = '닫기';
+  }
+} //탭구현
+
+
+var tabItem = document.querySelectorAll('.menu_tab .list li');
+var tabContent = document.querySelectorAll('.contents_tab .content');
+tabItem.forEach(function (item) {
+  item.addEventListener("click", tabHandler);
+});
+
+function tabHandler(item) {
+  var tabTarget = item.currentTarget;
+  var target = tabTarget.dataset.tab;
+  tabItem.forEach(function (title) {
+    title.classList.remove("active");
+  });
+  tabContent.forEach(function (target) {
+    target.classList.remove("active");
+  });
+  document.querySelector("#" + target).classList.add("active");
+  tabTarget.classList.add("active");
 }

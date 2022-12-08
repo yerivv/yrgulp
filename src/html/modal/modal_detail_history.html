@@ -1,0 +1,29 @@
+<div id="modal" class="modalCenter modal_detail_history">
+    <div class="wrap">
+        <div class="head">
+            <h2>구매이력</h2>
+            <div class="close" onclick="modalClose('modal_detail_history');">닫기</div>
+        </div>
+        <div class="menu_tab">
+            <ul class="list">
+                <li class="active"><a href="#" class="btn">상세정보</a></li>
+                <li><a href="#" class="btn">약학정보</a></li>
+                <li><a href="#" class="btn">상품확대</a></li>
+                <li><a href="#" class="btn">판매지도</a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            구매이력
+        </div>
+    </div>
+    <script>
+        function choice(a){
+            let rows = document.querySelector('.list_box tbody').querySelectorAll('tr');
+            let radio = a.closest('tr');
+            rows.forEach(row => {
+                row.classList.remove('choice');
+            });
+            radio.classList.add('choice');
+        }
+    </script>
+</div>

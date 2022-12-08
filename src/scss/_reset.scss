@@ -6,8 +6,7 @@ ul,li,ol{list-style-type:none}
 li,p,dt,dd,div,span{white-space:normal}
 table,div{border-collapse:collapse;border-spacing:0}
 table{width:100%;table-layout:fixed;}
-input,select,textarea {display:inline-block;vertical-align:top;background-color:#fff;border:solid 1px #e5e5e5;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
-input,select,option,textarea,button {outline:none;box-shadow:none;font-family:'Noto Sans KR','Malgun Gothic',Dotum,sans-serif;font-weight:400;font-size:14px;line-height:1.285;letter-spacing:-0.04em;color:#242424;}
+input,select,option,textarea,button {-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;box-shadow:none;font-family:'Noto Sans KR','Malgun Gothic',Dotum,sans-serif;font-weight:400;font-size:14px;line-height:1.285;letter-spacing:-0.04em;color:#242424;}
 label{display:inline-block;vertical-align:top;cursor:pointer}
 button,input[type=checkbox],input[type=radio]{background:transparent;cursor:pointer}
 button::-moz-focus-inner, button:focus, button:active {border:0;padding:0;outline:none;}

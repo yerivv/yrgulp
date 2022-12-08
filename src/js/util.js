@@ -59,20 +59,61 @@ function cateReady(){
     }
 }
 
-function modalFull(a){
-    let target = document.querySelector('.'+a);
+function isModal(){
+    let body = document.querySelector('body');
+    let modals = document.querySelectorAll('#modal.open');
 
-    if (target.classList.contains('open')) {
-        target.closest('#wrap').classList.remove('ismodal');
-        target.classList.remove('open');
+    if(modals.length == 0){
+        body.classList.remove('ismodal');
+        body.removeEventListener('scroll touchmove mousewheel', null);
     } else {
-        target.closest('#wrap').classList.add('ismodal');
-        target.classList.add('open');
+        body.classList.add('ismodal');
     }
+}
+
+function modalOpen(a){
+    let target = document.querySelector('.'+a);
+    target.closest('body, html').classList.add('ismodal');
+    target.classList.add('open');
+    target.closest('body, html').addEventListener('scroll touchmove mousewheel', function(e){e.preventDefault();});
 }
 
 function modalClose(a){
     let target = document.querySelector('.'+a);
-    target.closest('#wrap').classList.remove('ismodal');
     target.classList.remove('open');
+    isModal();
+}
+
+function floatingMore(a){
+    let wrap = a.closest('.floating_btn');
+    let text = wrap.querySelector('.more');
+
+    if(wrap.classList.contains('active')){
+        wrap.classList.remove('active');
+        text.innerText = '닫기';
+    } else {
+        wrap.classList.add('active');
+        text.innerText = '닫기';
+    }
+}
+
+//탭구현
+const tabItem = document.querySelectorAll('.menu_tab .list li');
+const tabContent = document.querySelectorAll('.contents_tab .content')
+
+tabItem.forEach((item) => {
+    item.addEventListener("click", tabHandler);
+});
+
+function tabHandler(item) {
+    const tabTarget = item.currentTarget;
+    const target = tabTarget.dataset.tab;
+    tabItem.forEach((title) => {
+        title.classList.remove("active");
+    });
+    tabContent.forEach((target) => {
+        target.classList.remove("active");
+    });
+    document.querySelector("#" + target).classList.add("active");
+    tabTarget.classList.add("active");
 }
