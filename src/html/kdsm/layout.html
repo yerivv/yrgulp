@@ -21,7 +21,7 @@
                 <a href="#" class="btn btn_category">카테고리보기</a>
             </div>
             <!-- 카테고리 -->
-            <div class="modal modal_category">
+            <div id="modal" class="modal modal_category">
                 <div class="head">마이페이지</div>
                 <div class="contents">
                     내용
@@ -30,14 +30,16 @@
             <!-- //간편장부 -->
         </div><!-- //topper -->
         <div id="gnb">
-            <ul>
-                <li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
-                <li class="active"><a href="#">광동전용관</a></li>
-                <li><a href="#">브랜드관</a></li>
-                <li><a href="#">주문/배송</a></li>
-                <li><a href="#">묶음상품</a></li>
-                <li><a href="#">정기배송</a></li>
-            </ul>
+            <div class="wrap">
+                <ul>
+                    <li class="active"><a href="#">추천상품<span class="label_count etc">32</span></a></li>
+                    <li><a href="#">광동전용관</a></li>
+                    <li><a href="#">브랜드관</a></li>
+                    <li><a href="#">주문/배송</a></li>
+                    <li><a href="#">묶음상품</a></li>
+                    <li><a href="#">정기배송</a></li>
+                </ul>
+            </div>
         </div>
         <!-- 컨텐츠 박스 영역 -->
         <div id="container">
@@ -63,12 +65,12 @@
             </ul>
         </div>
         <!-- 간편장부 -->
-        <div class="modal modal_ledger">
+        <div id="modal" class="modal modal_ledger">
             홍길동님
         </div>
         <!-- //간편장부 -->
         <!-- 마이페이지 -->
-        <div class="modal_full modal_mypage">
+        <div id="modal" class="modalFull modal_mypage">
             <div class="head">
                 <h2>마이페이지</h2>
                 <div class="close" onclick="modalClose('modal_mypage');">닫기</div>
@@ -82,7 +84,7 @@
         </div>
         <!-- //마이페이지 -->
         <!-- 전체메뉴 -->
-        <div class="modal_full">
+        <div id="modal" class="modal_full">
             <div class="head">전체메뉴</div>
             <div class="contents">
                 내용
@@ -130,6 +132,31 @@
         </div><!-- //footer -->
     </div><!-- //wrap -->
 
+    <script>
+        const gnbPosition = () => {
+            //let w = window.innerWidth;
+            let gnbWrap = document.querySelector('#gnb ul');
+            let gnbMenu = gnbWrap.querySelectorAll('li');
+            let gnbActive = gnbWrap.querySelector('.active');
+            let sum = 0;
+
+            gnbMenu.forEach((item) => {
+                let width = item.clientWidth;
+                item.setAttribute('data-width', item.clientWidth);
+                //item.style.cssText = 'width:' + width +'px';
+                //const a = [...width];
+                for(i of a){
+                    console.log(i);
+                }
+            });
+
+           // let width = gnbWrap.querySelectorAll('data-width');
+
+            //gnbWrap.scrollLeft = gnbActive.clientWidth
+            //console.log('active:'+gnbActive.offsetLeft, 'scroll:'+gnbWrap.scrollLeft, 'width:'+ gnbActive.clientWidth);
+        }
+        document.addEventListener("DOMContentLoaded", gnbPosition);
+    </script>
     <script src="@@webRoot/js/util.js"></script>
 </body>
 </html>

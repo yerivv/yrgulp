@@ -1,0 +1,81 @@
+#header {position:sticky;left:0;top:0;z-index:5;width:100%;height:56px;padding:8px 16px;background-color:#fff;}
+#header h1 {position:absolute;left:16px;top:50%;width:48px;height:16px;transform:translateY(-50%);}
+#header h1 a {display:block;}
+#header h1 img {display:block;width:100%;}
+#header .search_form {width:calc(100% - 134px);margin:0 80px 0 56px;}
+#header .top_btn {display:inline-flex;position:absolute;right:16px;top:50%;width:72px;height:24px;transform:translateY(-50%);}
+#header .top_btn .btn {position:relative;width:24px;height:24px;background-position:center center;background-repeat:no-repeat;background-size:contain;text-indent:-999em;}
+#header .top_btn .btn_cart {background-image:url(../imgs/test/icon_cart.png);}
+#header .top_btn .btn_category {margin-left:auto;background-image:url(../imgs/test/icon_menu.png);}
+#header .top_btn .btn .label_count {position:absolute;left:16px;top:0;}
+
+#gnb {overflow:hidden;position:relative;width:100%;height:40px;background-color:#fff;}
+#gnb::after {content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#EDF0F2;}
+// #gnb ul {display:flex;flex-wrap:nowrap;align-items:center;overflow-x:auto;height:40px;}
+// #gnb ul::-webkit-scrollbar {display: none;}
+// #gnb ul li {position:relative;}
+// #gnb ul {display:table;position:relative;z-index:1;white-space:nowrap;}
+// #gnb ul li {display:table-cell;position:relative;}
+#gnb ul {overflow-x:auto;position:relative;z-index:1;font-size:0;white-space:nowrap;}
+#gnb ul::-webkit-scrollbar {display: none;}
+#gnb ul li {display:inline-block;position:relative;}
+#gnb ul li::before {content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#EDF0F2;}
+#gnb ul li:first-child {padding-left:8px;}
+#gnb ul li:last-child {padding-right:8px;}
+#gnb ul li a {display:block;padding:12px 8px;color:#8F8F8F;font-size:15px;line-height:16px;white-space:nowrap;}
+#gnb .label_count {margin:1px 0 0 1px}
+#gnb ul .active a {color:#E8340C;font-weight:500;}
+#gnb ul .active::after {content:'';position:absolute;bottom:0;left:50%;width:28px;height:4px;border-radius: 4px 4px 0px 0px;background-color:#E8340C;transform:translateX(-50%);}
+
+#container {min-height:60vh;}
+
+#toolbar {opacity:0;position:fixed;left:0;bottom:-80px;z-index:5;width:100%;padding:8px 0 24px;border-top:1px solid #EDF0F2;background-color:#fff;transition:all 0.1s;}
+#toolbar ul {display:flex;}
+#toolbar ul li {flex:1;}
+#toolbar ul li a {display:block;position:relative;padding-top:24px;color:#5B5E6A;font-size:11px;line-height:16px;text-align:center;}
+#toolbar ul li a::before {content:'';position:absolute;left:0;top:0;width:100%;height:24px;background-position:center top;background-repeat:no-repeat;background-size:24px auto;}
+#toolbar ul li.active a {color:#E8340C;font-weight:500;}
+#toolbar ul li.active a::before {background-position:center bottom;}
+#toolbar ul li.home a::before {background-image:url(../imgs/test/toolbar_home.png);}
+#toolbar ul li.repurchase a::before {background-image:url(../imgs/test/toolbar_repurchase.png);}
+#toolbar ul li.ledger a::before {background-image:url(../imgs/test/toolbar_ledger.png);}
+#toolbar ul li.mypage a::before {background-image:url(../imgs/test/toolbar_mypage.png);}
+#toolbar ul li.allmenu a::before {background-image:url(../imgs/test/toolbar_menu.png);}
+
+#floating {display:flex;flex-direction:column;gap:8px;position:fixed;right:16px;bottom:16px;z-index:5;transition:all 0.1s;}
+#floating .top {display:none;}
+#floating .btn {display:block;position:relative;width:44px;height:44px;border-radius:40px;text-indent:-999em;}
+#floating .btn::after {content:'';position:absolute;left:50%;top:50%;width:24px;height:24px;background-position:center center;background-repeat:no-repeat;background-size:contain;transform:translate(-50%, -50%);}
+#floating .btn_top {border:solid 1px #e3e3e3;background-color:rgba(255, 255, 255, 0.7);}
+#floating .btn_top::after {background-image:url(../imgs/test/icon_top.png)}
+#floating .btn_talk {background:linear-gradient(135deg, #FFC397 0%, #E8340C 89.06%)}
+#floating .btn_talk::after {background-image:url(../imgs/test/icon_talk.png)}
+
+#footer {padding-bottom:72px;background-color:#535353;}
+#footer .menu {display:flex;}
+#footer .menu li {position:relative;text-align:center;}
+#footer .menu li::before {content:'';position:absolute;left:-1px;top:50%;width:1px;height:12px;background-color:#e3e3e3;transform:translateY(-50%);}
+#footer .menu li a {display:block;padding:0 9px 0 8px;color:#E3E3E3;font-size:12px;line-height:16px;}
+#footer .footer_menu {background-color:#fff;border-top: 1px solid #EDF0F2;}
+#footer .footer_menu .menu li {flex:1;}
+#footer .footer_menu .menu li a {padding:8px 0;color:#8f8f8f;}
+#footer .innerbox {padding:24px 16px;color:#fff;}
+#footer .innerbox a {color:#fff;}
+#footer .customer {position:relative;padding-bottom:20px;margin-bottom:18px;border-bottom:1px solid #8F8F8F;}
+#footer .customer .tel {font-size:20px;font-weight:500;}
+#footer .customer dd {margin-top:4px;font-size:11px;line-height:11px;}
+#footer .customer .btn_tel {position:absolute;right:0;top:0;padding:8px 12px 8px 16px;border-radius:40px;background-color:rgba(143, 143, 143, 0.5);font-size:13px;line-height:16px;}
+#footer .customer .btn_tel i {display:inline-block;width:12px;height:12px;margin-left:8px;background:url(../imgs/test/icon_call.png) center center no-repeat;background-size:contain;vertical-align:baseline;}
+#footer .info {color:#B0B0B0;font-size:11px;line-height:15px;}
+#footer .info .menu {flex-wrap:wrap;margin-bottom:14px;}
+#footer .info .menu li:first-child a {padding-left:0;}
+#footer .info .menu li:first-child::before {display:none;}
+#footer .info address {position:relative;padding-right:100px;}
+#footer .info address a {color:#B0B0B0;}
+#footer .info address .btn_biz {position:absolute;right:0;bottom:3px;width:100px;border:1px solid #8f8f8f;font-size:12px;line-height:18px;text-align:center;}
+#footer .info .copy {padding:6px 0;margin-top:3px;font-weight:300;}
+
+/* scroll after */
+.scroll #floating {bottom:80px;}
+.scroll #floating .top {display:block;}
+.scroll #toolbar {opacity:1;bottom:0;}
