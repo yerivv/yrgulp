@@ -216,7 +216,7 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 #modal.open {display:block;opacity:1;pointer-events:auto;}
 #modal::before {content:'';position:fixed;left:0;top:0;z-index:98;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.6);}
 #modal.modalFull .wrap {overflow:hidden;position:fixed;left:0;top:0;z-index:99;width:100%;height:100%;border-radius:24px 24px 0px 0px;background-color:#fff;transition: 0.2s;}
-#modal.modalCenter .wrap {overflow:hidden;position:fixed;left:50%;top:50%;z-index:100;width:calc(100% - 32px);height:calc(100% - 112px);background-color:#fff;transform:translate(-50%, -50%);transition: 0.2s;}
+#modal.modalCenter .wrap {overflow:hidden;position:fixed;left:16px;top:56px;z-index:100;width:calc(100% - 32px);height:calc(100% - 112px);background-color:#fff;transition: 0.2s;}
 #modal.modalCenter::before {z-index:99;}
 .modalFull .head,
 .modalCenter .head {display:flex;align-items:center;position:sticky;left:0;top:0;height:60px;padding:19px 16px 18px;border-bottom:1px solid #EDF0F2;background-color:#fff;}

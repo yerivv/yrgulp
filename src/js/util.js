@@ -117,3 +117,15 @@ function tabHandler(item) {
     document.querySelector("#" + target).classList.add("active");
     tabTarget.classList.add("active");
 }
+
+// const gnbScroll = () => {
+//     //let w = window.innerWidth;
+//     let gnbWrap2 = document.querySelector('#gnb .wrap');
+//     let gnbActive = gnbWrap2.querySelector('.active');
+
+//     console.log(gnbWrap2.scrollLeft)
+
+//     //gnbWrap.scrollLeft = gnbActive.clientWidth
+//     //console.log('active:'+gnbActive.offsetLeft, 'scroll:'+gnbWrap.scrollLeft, 'width:'+ gnbActive.clientWidth);
+// }
+// document.querySelector('#gnb .wrap').addEventListener("scroll", gnbScroll);
