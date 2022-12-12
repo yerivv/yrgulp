@@ -8,17 +8,16 @@
 #header .top_btn .btn_cart {background-image:url(../imgs/test/icon_cart.png);}
 #header .top_btn .btn_category {margin-left:auto;background-image:url(../imgs/test/icon_menu.png);}
 #header .top_btn .btn .label_count {position:absolute;left:16px;top:0;}
+#header .page_name_box {display:flex;align-items:center;position:relative;height:40px;}
+#header .page_name_box h2 {padding-left:32px;font-size:16px;font-weight:500;}
+#header .page_name_box .btn_history {position:absolute;left:0;top:50%;width:24px;height:24px;background:url(../imgs/test/icon_history.png) center center no-repeat;background-size:contain;text-indent:-999em;transform:translateY(-50%);}
+#header.type2 {border-bottom:1px solid #EDF0F2;}
+#header.type2 h1 {overflow:hidden;position:absolute;width:1px;height:1px;clip:rect(0 0 0 0);}
 
 #gnb {overflow:hidden;position:relative;width:100%;height:40px;background-color:#fff;}
 #gnb::after {content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#EDF0F2;}
 #gnb .wrap {overflow-x:auto;position:relative;z-index:1;}
 #gnb .wrap::-webkit-scrollbar {display: none;}
-// #gnb ul {display:flex;flex-wrap:nowrap;align-items:center;overflow-x:auto;height:40px;}
-// #gnb ul li {position:relative;}
-// #gnb ul {display:table;position:relative;z-index:1;white-space:nowrap;}
-// #gnb ul li {display:table-cell;position:relative;}
-// #gnb ul {font-size:0;white-space:nowrap;}
-// #gnb ul li {display:inline-block;position:relative;}
 #gnb ul::-webkit-scrollbar {display: none;}
 #gnb ul {display:flex;flex-wrap:nowrap;align-items:center;overflow-x:auto;height:40px;}
 #gnb ul li {position:relative;box-sizing:content-box;}
@@ -30,7 +29,7 @@
 #gnb ul .active a {color:#E8340C;font-weight:500;}
 #gnb ul .active::after {content:'';position:absolute;bottom:0;left:50%;width:28px;height:4px;border-radius: 4px 4px 0px 0px;background-color:#E8340C;transform:translateX(-50%);}
 
-#container {min-height:60vh;}
+#container {min-height:60vh;padding:16px;}
 
 #toolbar {opacity:0;position:fixed;left:0;bottom:-80px;z-index:5;width:100%;padding:8px 0 24px;border-top:1px solid #EDF0F2;background-color:#fff;transition:all 0.1s;}
 #toolbar ul {display:flex;}

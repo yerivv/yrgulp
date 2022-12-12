@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>KDSM 테스트</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/kdsm.css">
+</head>
+<body>
+
+    <div id="wrap" class="wrap">
+        <!-- 상단 -->
+        <div id="header" class="type2">
+            <h1><a href="#"><img src="../imgs/test/logo.png" alt="광동제약"></a></h1>
+            <div class="page_name_box">
+                <h2>장바구니</h2>
+                <a href="#" class="btn_history">이전 페이지 이동</a>
+            </div>
+        </div><!-- //topper -->
+        <!-- 컨텐츠 박스 영역 -->
+        <div id="container">
+            <div class="noticebox">
+                <dl>
+                    <dt>꼭 알아두세요!</dt>
+                    <dd>약사님의 장바구니 담는 시점과 실제 결제하는 시간 차이가 있는 경우 업체 가격 변동이 있을 수 있으니 한 번 더 확인해주세요.</dd>
+                    <dd>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</dd>
+                    <dd>수량 변경 시 수량변경 버튼을 눌러주셔야 변경 사항이 적용됩니다.</dd>
+                </dl>
+            </div>
+            <div class="blank_space"></div>
+
+            <div class="cartin_list">
+                <!-- 전체 선택 -->
+                <div class="allcheck">
+                    <div style="float:left;">
+                        <span class="formdesign"><input type="checkbox" name="allcheck" id="allcheck1" onclick="allCheckClick(this)" value=""><label for="allcheck1">전체 선택</label></span>
+                    <a href="javascript:;" class="button small2" onclick="delAll();return false">선택 삭제</a>
+                    </div>
+                    <div style="text-align:right">
+                        <a href="javascript:;" class="button small2" onclick="delAll();return false">선택 삭제</a>
+                    </div>
+                </div><!-- //allcheck -->
+            </div>
+
+            <!-- 주문하기 floating_btn -->
+            <div class="floating_btn">
+                <div class="more" onclick="floatingMore(this)">자세히 보기</div>
+                <div class="calculation_list">
+                    <dl>
+                        <dt>총 상품금액(주문가능)</dt>
+                        <dd><strong class="number">4,554,400</strong>원</dd>
+                    </dl>
+                    <dl>
+                        <dt>예상 비용할인</dt>
+                        <dd><i class="minus"></i><strong class="number">10,400</strong>원</dd>
+                    </dl>
+                </div>
+                <div class="total_price">
+                    <div class="total fcblack">총 예상주문금액</div>
+                    <div class="price fcpoint"><strong class="number">4,544,000</strong>원</div>
+                </div>
+                <div class="button_box">
+                    <a href="#" class="btn fill">주문하기</a>
+                </div>
+            </div><!-- //floating_btn -->
+        </div><!-- //container -->
+
+        <!-- 하단 -->
+        <div id="footer">
+            <div class="footer_menu">
+                <ul class="menu">
+                    <li><a href="#">입점업체안내</a></li>
+                    <li><a href="#">배송안내</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">1:1문의</a></li>
+                </ul>
+            </div>
+            <div class="innerbox">
+                <div class="customer">
+                    <h6 class="blind">고객센터</h6>
+                    <a href="tel:080-024-0030" class="tel number">080-024-0030</a>
+                    <a href="tel:080-024-0030" class="btn_tel">전화걸기<i></i></a>
+                    <dl>
+                        <dt class="blind">운영시간</dt>
+                        <dd>평일 (토/일/공휴일 휴무)</dd>
+                        <dd>점심시간 12:30 ~ 13:30</dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <ul class="menu">
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="#">수신동의</a></li>
+                        <li><a href="#">PC버전</a></li>
+                    </ul>
+                    <address>
+                        서울 서초구 서초중앙로 85 (서초동, 가산빌딩)<br>
+                        사업자등록번호 : 113-81-08888<br>
+                        통신판매업신고 : 2015-서울서초-1283호
+                        <a href="javascript:void(window.open('http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=113-81-08888','communicationViewPopup','width=750,height=700,scrollbars=yes'))" class="btn_biz">사업자정보 확인</a>
+                    </address>
+                    <p class="copy">ⓒ KWANGDONG PHARMACEUTICAL CO,. LTD. ALL RIGHT RESERVED</p>
+                </div>
+            </div>
+        </div><!-- //footer -->
+    </div><!-- //wrap -->
+
+    <script>
+        const gnbPosition = () => {
+            let gnbWrap = document.querySelector('#gnb .wrap');
+            let gnbMenu = gnbWrap.querySelector('ul');
+            let gnbItem = gnbMenu.querySelectorAll('li');
+            let gnbActive = gnbWrap.querySelector('.active');
+            let sum = 0;
+
+            if(gnbActive !== null){
+                gnbItem.forEach((item, index) => {
+                    //console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
+                    sum += item.clientWidth;
+                }); 
+                gnbMenu.style.cssText = 'width:'+ sum + 'px';
+                
+                let screen = window.innerWidth;
+                let activeWidth = gnbActive.clientWidth;
+                let activeLeft = gnbActive.offsetLeft;
+                //console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
+                if(sum-screen >= 0) {
+                    //console.log('크다')
+                    gnbWrap.scrollLeft = activeLeft;
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(gnbPosition, 100);
+        });
+    </script>
+    <script src="../js/util.js"></script>
+</body>
+</html>

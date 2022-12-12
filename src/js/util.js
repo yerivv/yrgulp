@@ -62,7 +62,6 @@ function cateReady(){
 function isModal(){
     let body = document.querySelector('body');
     let modals = document.querySelectorAll('#modal.open');
-
     if(modals.length == 0){
         body.classList.remove('ismodal');
         body.removeEventListener('scroll touchmove mousewheel', null);
@@ -98,34 +97,22 @@ function floatingMore(a){
 }
 
 //탭구현
-const tabItem = document.querySelectorAll('.menu_tab .list li');
-const tabContent = document.querySelectorAll('.contents_tab .content')
+const tabInit = (a) => {
+    let tabWrap = document.querySelector(a);
+    let tabs = tabWrap.querySelectorAll('.menu_tab li');
+    let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
 
-tabItem.forEach((item) => {
-    item.addEventListener("click", tabHandler);
-});
-
-function tabHandler(item) {
-    const tabTarget = item.currentTarget;
-    const target = tabTarget.dataset.tab;
-    tabItem.forEach((title) => {
-        title.classList.remove("active");
-    });
-    tabContent.forEach((target) => {
-        target.classList.remove("active");
-    });
-    document.querySelector("#" + target).classList.add("active");
-    tabTarget.classList.add("active");
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
+            tabContents.forEach((tabContent) => {
+                tabContent.classList.remove('active')
+            });
+            tabs.forEach((tab) => {
+                tab.classList.remove('active')
+            });
+            target.classList.add('active')
+            tab.classList.add('active')
+        })
+    })
 }
-
-// const gnbScroll = () => {
-//     //let w = window.innerWidth;
-//     let gnbWrap2 = document.querySelector('#gnb .wrap');
-//     let gnbActive = gnbWrap2.querySelector('.active');
-
-//     console.log(gnbWrap2.scrollLeft)
-
-//     //gnbWrap.scrollLeft = gnbActive.clientWidth
-//     //console.log('active:'+gnbActive.offsetLeft, 'scroll:'+gnbWrap.scrollLeft, 'width:'+ gnbActive.clientWidth);
-// }
-// document.querySelector('#gnb .wrap').addEventListener("scroll", gnbScroll);

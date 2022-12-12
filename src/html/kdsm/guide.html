@@ -20,6 +20,7 @@
         .guide_container .data_list_row dt {display:table-cell;vertical-align:middle;width:100px;background-color:#EDF0F2;padding:8px;}
         .guide_container .data_list_row dd {display:table-cell;width:calc(100% - 100px);padding:8px;}
     </style>
+    <script src="@@webRoot/js/util.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -132,14 +133,25 @@
                     <div class="control" onclick="controlCate()">카테고리 <span class="text">열기</span></div>
                 </div>
                 <h3>메뉴 탭</h3>
-                <div class="menu_tab">
-                    <ul class="list">
-                        <li class="active"><span class="btn">상세정보</span></li>
-                        <li><span class="btn">약학정보</span></li>
-                        <li><span class="btn">상품확대</span></li>
-                        <li><span class="btn">판매지도</span></li>
-                    </ul>
+                <div id="tabbox1">
+                    <div class="menu_tab">
+                        <ul class="list">
+                            <li class="active" data-tab-target="tab1"><span class="btn">상세정보</span></li>
+                            <li data-tab-target="tab2"><span class="btn">약학정보</span></li>
+                            <li data-tab-target="tab3"><span class="btn">상품확대</span></li>
+                            <li data-tab-target="tab4"><span class="btn">판매지도</span></li>
+                        </ul>
+                    </div>
+                    <div class="contents contents_tab">
+                        <div id="tab1" class="content active">탭컨텐츠1</div>
+                        <div id="tab2" class="content">탭컨텐츠2</div>
+                        <div id="tab3" class="content">탭컨텐츠3</div>
+                        <div id="tab4" class="content">탭컨텐츠4</div>
+                    </div>
                 </div>
+                <script>
+                    tabInit('#tabbox1');
+                </script>
             </div>
             <div class="section">
                 <h2>Form</h2>
@@ -693,6 +705,14 @@
 
         <div class="guide_container">
             <div class="section">
+                <h2>Space</h2>
+                <h3>default</h3>
+                <div class="blank_space"></div>
+            </div>
+        </div>
+
+        <div class="guide_container">
+            <div class="section">
                 <h2>Modal</h2>
                 <h3>Full</h3>
                 <div class="button_box single">
@@ -788,8 +808,6 @@
         @@include('@@webRoot/modal/modal_detail_info.html')
         @@include('@@webRoot/modal/modal_detail_history.html')
     </div>
-
-    <script src="@@webRoot/js/util.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", cateReady);
     </script>
