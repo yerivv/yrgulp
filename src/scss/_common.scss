@@ -220,7 +220,7 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 .noticebox .on .toggle {display:block;}
 
 /* floating btn */
-.floating_btn {position:fixed;bottom:-1px;left:0;z-index:2;width:100%;padding:16px 16px 24px;border:1px solid #EDF0F2;border-radius: 24px 24px 0px 0px;background-color:#fff;box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.1);}
+.floating_btn {position:fixed;bottom:-1px;left:0;z-index:6;width:100%;padding:16px 16px 24px;border:1px solid #EDF0F2;border-radius: 24px 24px 0px 0px;background-color:#fff;box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.1);}
 .floating_btn .price strong {letter-spacing:0;}
 .floating_btn .info_text {display:flex;flex-wrap:wrap;color:#8f8f8f;font-size:13px;line-height:15px;}
 .floating_btn .info_text > div + div {position:relative;margin-left:13px;}
@@ -241,26 +241,25 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 /* modal */
 .ismodal {overflow:hidden;width:100%;height:100%;touch-action:none;}
 .ismodal::-webkit-scrollbar {display:none;}
-
 #modal {display:none;opacity:0;pointer-events:none;}
 #modal.open {display:block;opacity:1;pointer-events:auto;}
-#modal::before {content:'';position:fixed;left:0;top:0;z-index:98;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.6);}
-#modal.modalFull .wrap {overflow:hidden;position:fixed;left:0;top:0;z-index:99;width:100%;height:100%;border-radius:24px 24px 0px 0px;background-color:#fff;transition: 0.2s;}
-#modal.modalCenter .wrap {overflow:hidden;position:fixed;left:16px;top:56px;z-index:100;width:calc(100% - 32px);height:calc(100% - 112px);background-color:#fff;transition: 0.2s;}
-#modal.modalCenter::before {z-index:99;}
-.modalFull .head,
-.modalCenter .head {display:flex;align-items:center;position:sticky;left:0;top:0;height:60px;padding:19px 16px 18px;border-bottom:1px solid #EDF0F2;background-color:#fff;}
-.modalFull .head h2,
-.modalCenter .head h2 {font-size:16px;font-weight:500;line-height:24px;}
-.modalFull .head .close,
-.modalCenter .head .close {width:24px;height:24px;margin-left:auto;background:url(../imgs/test/icon_x.png) center center no-repeat;background-size:contain;text-indent:-999em;}
-.modalFull .contents,
-.modalCenter .contents {overflow-y:auto;max-height:calc(100% - 60px);padding:16px;}
-.modalFull .contents .title,
-.modalCenter .contents .title {padding:24px 0 8px;font-weight:500;}
-.modalFull .contents h3,
-.modalCenter .contents h3 {font-size:16px;line-height:24px;}
-.modalFull .contents h4,
-.modalCenter .contents h4 {font-size:14px;line-height:15px;}
-.modalFull .contents .wide,
-.modalCenter .contents .wide {padding-left:16px;padding-right:16px;margin-left:-16px;margin-right:-16px;}
+#modal::before {content:'';position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.6);}
+#modal .wrap {overflow:hidden;position:fixed;background-color:#fff;}
+#modal .head {display:flex;justify-content:space-between;align-items:center;position:sticky;left:0;top:0;height:60px;padding:19px 16px 18px;border-bottom:1px solid #EDF0F2;background-color:#fff;}
+#modal .head h2 {font-size:16px;font-weight:500;line-height:24px;}
+#modal .head .close {width:24px;height:24px;margin-left:auto;background:url(../imgs/test/icon_x.png) center center no-repeat;background-size:contain;text-indent:-999em;}
+#modal .contents {overflow:hidden;overflow-y:auto;}
+#modal .contents .title {padding:24px 0 8px;font-weight:500;}
+#modal .contents .title h3 {font-size:16px;line-height:24px;}
+#modal .contents .title h4 {font-size:14px;line-height:15px;}
+#modal .contents .wide {padding-left:16px;padding-right:16px;margin-left:-16px;margin-right:-16px;}
+
+/* modal default */
+.modalCenter::before {z-index:99;}
+.modalCenter .wrap {left:50%;top:50%;z-index:100;width:calc(100% - 32px);max-height:calc((var(--vh, 1vh) * 100) - 112px);transform:translate(-50%, -50%);}
+.modalCenter .contents {padding:16px;max-height:calc((var(--vh, 1vh) * 100) - 172px);}
+
+/* modal full */
+.modalFull::before {z-index:98;}
+.modalFull .wrap {left:0;top:0;z-index:99;width:100%;height:calc((var(--vh, 1vh) * 100));border-radius:24px 24px 0px 0px;}
+.modalFull .contents {max-height:calc(100% - 60px);padding:16px;}

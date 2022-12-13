@@ -52,6 +52,7 @@
 #floating .btn_top::after {background-image:url(../imgs/test/icon_top.png)}
 #floating .btn_talk {background:linear-gradient(135deg, #FFC397 0%, #E8340C 89.06%)}
 #floating .btn_talk::after {background-image:url(../imgs/test/icon_talk.png)}
+#floating.have_bar {bottom:145px;}
 
 #footer {padding-bottom:72px;background-color:#535353;}
 #footer .menu {display:flex;}
@@ -80,4 +81,5 @@
 /* scroll after */
 .scroll #floating {bottom:80px;}
 .scroll #floating .top {display:block;}
-.scroll #toolbar {opacity:1;bottom:0;}
+.scroll #floating.have_bar {bottom:145px;}
+#toolbar.up {opacity:1;bottom:0;}

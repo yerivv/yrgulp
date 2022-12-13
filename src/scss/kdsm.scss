@@ -32,7 +32,7 @@
 
 .modal_detail_info .menu_tab {position:sticky;left:0;top:0;z-index:1;}
 .modal_detail_info .contents {padding:0;}
-.modal_detail_info .contents_tab .content {padding:16px;}
+.modal_detail_info .contents_tab .content {overflow:hidden;overflow-y:auto;height:calc((var(--vh, 1vh) * 100) - 214px);padding:16px;}
 .modal_detail_info .contents h3 {font-size:14px;}
 .modal_detail_info .detail_info_img {padding:0;margin:16px -16px 0;border-top:1px solid #EDF0F2}
 .modal_detail_info .zoom_image {margin-top:8px;}

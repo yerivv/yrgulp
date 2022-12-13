@@ -393,6 +393,15 @@
 			</div><!-- //page_order -->
 		</div><!-- //container -->
 
+		<div id="floating">
+			<div class="talk">
+					<a href="#" class="btn btn_talk">채팅</a>
+			</div>
+			<div class="top">
+					<a href="#" class="btn btn_top">TOP</a>
+			</div>
+		</div>
+
 		<!-- 하단 -->
 		<div id="footer">
 			<div class="footer_menu">
@@ -432,36 +441,9 @@
 			</div>
 		</div><!-- //footer -->
 	</div><!-- //wrap -->
-
-	<script>
-		const gnbPosition = () => {
-			let gnbWrap = document.querySelector('#gnb .wrap');
-			let gnbMenu = gnbWrap.querySelector('ul');
-			let gnbItem = gnbMenu.querySelectorAll('li');
-			let gnbActive = gnbWrap.querySelector('.active');
-			let sum = 0;
-
-			if(gnbActive !== null){
-				gnbItem.forEach((item, index) => {
-					//console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
-					sum += item.clientWidth;
-				}); 
-				gnbMenu.style.cssText = 'width:'+ sum + 'px';
-				
-				let screen = window.innerWidth;
-				let activeWidth = gnbActive.clientWidth;
-				let activeLeft = gnbActive.offsetLeft;
-				//console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
-				if(sum-screen >= 0) {
-					//console.log('크다')
-					gnbWrap.scrollLeft = activeLeft;
-				}
-			}
-		}
-		document.addEventListener("DOMContentLoaded", function () {
-			setTimeout(gnbPosition, 100);
-		});
-	</script>
 	<script src="@@webRoot/js/util.js"></script>
+	<script>
+		floating('.floating_btn');
+	</script>
 </body>
 </html>

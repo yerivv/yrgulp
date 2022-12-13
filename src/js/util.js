@@ -1,21 +1,42 @@
-// const area = document.querySelector('.wrap');
-// let prevScroll = 0;
-
-
-// document.addEventListener('scroll', getScrollDirection);
-
+// let lastScroll = document.documentElement.scrollTop || 0;
+// let isScrolling;
+// document.addEventListener('scroll', getScrollDirection, false);
 // function getScrollDirection() {
-//     const currScroll = this.scrollTop;
-//     if (prevScroll > currScroll) {
-//         console.log('up')
+//     let scrollTop = document.documentElement.scrollTop;
+//     let start = 30;
+//     const body = document.querySelector('body');
+//     const toolbar = document.querySelectorAll('#toolbar');
+//     const floating = document.querySelectorAll('#floating');
+
+//     if(toolbar.length>0 || floating.length>0){
+//         if (scrollTop > lastScroll) {
+//             toolbar.classList.remove('up');
+//             //body.classList.remove('scroll');
+//             console.log('dowm')
+//         }
+//         else {
+//             //toolbar.classList.add('up');
+//             //document.querySelector('body').classList.add('scroll');
+//             console.log('up')
+//         }
+//         lastScroll = scrollTop;
 //     }
-//     else {
-//         console.log('down')
-//     }
-//     prevScroll = currScroll;
+    
+//     window.clearTimeout( isScrolling );
+
+// 	isScrolling = setTimeout(function() {
+// 		console.log( '스크롤 멈춤' );
+// 	}, 66);
 // }
 
-const wrap = document.querySelector('body');
+const floating = (a) => {
+    let floating = document.querySelectorAll(a);
+    let top = document.querySelector('#floating');
+    if(floating.length>0){
+        top.classList.add('have_bar')
+    }
+}
+
 window.addEventListener('scroll', function() {
     const top = this.scrollY;
     let h = 30;
@@ -24,7 +45,7 @@ window.addEventListener('scroll', function() {
     } else {
         document.querySelector('body').classList.remove('scroll');
     }
-});
+}, false);
 
 const controlCate = () => {
     let target = document.querySelector('.category_tab');
@@ -72,9 +93,9 @@ function isModal(){
 
 function modalOpen(a){
     let target = document.querySelector('.'+a);
-    target.closest('body, html').classList.add('ismodal');
+    target.closest('body').classList.add('ismodal');
     target.classList.add('open');
-    target.closest('body, html').addEventListener('scroll touchmove mousewheel', function(e){e.preventDefault();});
+    target.closest('body').addEventListener('scroll touchmove mousewheel', function(e){e.preventDefault();}, false);
 }
 
 function modalClose(a){
@@ -118,18 +139,23 @@ const tabInit = (a) => {
 }
 
 //아코디언
-const accordions = document.querySelectorAll('.accordion');
-console.log(accordions)
-accordions.forEach(function(accordion, index) {
-    accordion.addEventListener('click', function(e) {
-        e.preventDefault();
+// const accordions = document.querySelectorAll('.accordion');
+// console.log(accordions)
+// accordions.forEach(function(accordion, index) {
+//     accordion.addEventListener('click', function(e) {
+//         e.preventDefault();
         
-        this.parentNode.classList.toggle('on');
+//         this.parentNode.classList.toggle('on');
         
-        accordions.forEach(function(accordion2, index2) {
-            if ( index !== index2 ) {
-                accordion2.parentNode.classList.remove('on');
-            }
-        });
-    });
+//         accordions.forEach(function(accordion2, index2) {
+//             if ( index !== index2 ) {
+//                 accordion2.parentNode.classList.remove('on');
+//             }
+//         });
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const vh = window.innerHeight * 0.01;
+	document.querySelector('html').style.cssText = '--vh:'+vh+'px';
 });
