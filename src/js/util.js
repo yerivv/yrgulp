@@ -116,3 +116,20 @@ const tabInit = (a) => {
         })
     })
 }
+
+//아코디언
+const accordions = document.querySelectorAll('.accordion');
+console.log(accordions)
+accordions.forEach(function(accordion, index) {
+    accordion.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        this.parentNode.classList.toggle('on');
+        
+        accordions.forEach(function(accordion2, index2) {
+            if ( index !== index2 ) {
+                accordion2.parentNode.classList.remove('on');
+            }
+        });
+    });
+});
