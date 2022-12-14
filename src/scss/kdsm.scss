@@ -40,9 +40,9 @@
 
 /* 주문리스트 */
 .orderlist_wrap .allcheck {display:flex;align-items:center;justify-content:space-between;padding:12px;}
-.orderlist_wrap .group {overflow:hidden;border:1px solid #dee0e4;border-radius:4px;}
+.orderlist_wrap .group {border:1px solid #dee0e4;border-radius:4px;}
 .orderlist_wrap .group + .group {margin-top:12px;}
-.orderlist_wrap .dealer_info {display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;position:relative;;padding:7px 35px 8px 11px;background-color:#ff7556;color:#fff;}
+.orderlist_wrap .dealer_info {display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;position:relative;padding:7px 35px 8px 11px;border-radius:4px 4px 0 0;background-color:#ff7556;color:#fff;}
 .orderlist_wrap .dealer_info::after {content:'';position:absolute;right:11px;top:50%;width:24px;height:24px;background:url(../imgs/test/icon_arrow_up2.png) center center no-repeat;background-size:contain;transform:translateY(-50%) rotate(180deg);transition:0.2s;}
 .orderlist_wrap .dealer {display:inline-flex;align-items:center;margin-right:auto;}
 .orderlist_wrap .dealer label {font-size:15px;font-weight:500;}
@@ -62,7 +62,7 @@
 .orderlist_wrap .total_info .info .order {width:52%;padding-right:8px;color:#8f8f8f;}
 .orderlist_wrap .total_info .info .price {width:48%;padding-left:9px;}
 .orderlist_wrap .total_info .info .price li {display:flex;justify-content:space-between;}
-.orderlist_wrap .product_list {padding:0 11px;border-top:1px solid #dee0e4;background-color:#f4f7f9;}
+.orderlist_wrap .product_list {padding:0 11px;border-top:1px solid #dee0e4;border-radius:0 0 4px 4px;background-color:#f4f7f9;}
 .orderlist_wrap .have_check .item {position:relative;padding-left:32px;}
 .orderlist_wrap .have_check .checks {position:absolute;left:0;top:19px;}
 .orderlist_wrap .product_list .item {margin-top:1px;}
@@ -96,3 +96,49 @@
 .orderlist_wrap .toggle {display:none;}
 .orderlist_wrap .on .toggle {display:block;}
 .orderlist_wrap .on .dealer_info::after {transform:translateY(-50%);}
+
+.product_list_simple {border:1px solid #dee0e4;border-radius:4px;}
+.product_list_simple li:first-child .seller {border-radius:4px 4px 0 0}
+.product_list_simple .seller,
+.product_list_simple .infobox {display:flex;flex-wrap:wrap;align-items:center;padding:12px 15px;border-bottom:1px solid #dee0e4;}
+.product_list_simple .seller {justify-content:space-between;background-color:#f4f7f9;font-size:15px;line-height:19px;}
+.product_list_simple .infobox .total {width:calc(100% - 120px);color:#666;line-height:16px;}
+.product_list_simple .infobox .price {width:120px;margin-left:auto;line-height:15px;text-align:right;}
+.product_list_simple .infobox .price strong {font-weight:500;}
+.product_list_simple .infobox .memo {width:100%;margin-top:10px;}
+.product_list_simple .price_total {padding:4px 16px 12px;}
+.product_list_simple .price_total dl {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:8px;}
+.product_list_simple .price_total dd {font-size:12px;}
+.product_list_simple .price_total dd strong {font-size:18px;}
+
+.discount_selct {border:1px solid #dee0e4;border-radius:4px;}
+.discount_selct dl:first-child dt {border-top-width:0;border-radius:4px 4px 0 0;}
+.discount_selct dt,
+.discount_selct dd {display:flex;flex-wrap:wrap;align-items:center;padding:11px 15px;border-top:1px solid #dee0e4;line-height:16px;}
+.discount_selct dt {background-color:#f4f7f9;}
+.discount_selct dt .btn_i {margin-left:2px;vertical-align:top;}
+.discount_selct dt .have {margin-left:auto;}
+.discount_selct dt .have strong {font-weight:500;}
+.discount_selct .box + .box {margin-top:8px;}
+.discount_selct .box {display:flex;flex-wrap:nowrap;align-items:center;gap:8px;}
+.discount_selct .box .type {width:88px;color:#666;}
+.discount_selct .box .input {width:calc(100% - 169px);}
+.discount_selct .box .buttons {width:65px;padding-left:0;padding-right:0;}
+.discount_selct .coupon .box .type {width:58px;color:#666;}
+.discount_selct .coupon .box .input {width:calc(100% - 154px);}
+.discount_selct .coupon .box .buttons {width:80px;padding-left:0;padding-right:0;}
+
+.paytotal_calc li + li {margin-top:12px;}
+.paytotal_calc li {border:1px solid #dee0e4;border-radius:4px;}
+.paytotal_calc .title {display:flex;flex-wrap:wrap;align-items:center;padding:11px 15px;border-bottom:1px solid #dee0e4;border-radius:4px 4px 0 0;background-color:#f4f7f9;line-height:16px;}
+.paytotal_calc .title .btn_i {margin-left:2px;vertical-align:top;}
+.paytotal_calc dd strong {font-weight:500;line-height:14px;}
+.paytotal_calc .list,
+.paytotal_calc .total {padding:0 15px;margin-top:12px;}
+.paytotal_calc .list dl,
+.paytotal_calc .total dl {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;line-height:16px;}
+.paytotal_calc .list dl {margin-top:12px;}
+.paytotal_calc .total dl {padding:12px 0;border-top:1px solid #dee0e4;line-height:18px;}
+.paytotal_calc .total dd {font-size:12px;}
+.paytotal_calc .total dd strong {font-size:16px;font-weight:700;}
+.paytotal_calc .discount_info .title {background-color:#ffe7e1;}

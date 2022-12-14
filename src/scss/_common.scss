@@ -70,6 +70,12 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 .ea_box .eaminus:disabled::after {background-image:url(../imgs/test/icon_minus2.png);}
 .ea_box .eaplus:disabled::after {background-image:url(../imgs/test/icon_plus2.png);}
 
+/* title */
+.title_box {display:flex;flex-wrap:wrap;align-items:center;margin:24px 0 8px;line-height:24px;}
+.title_box .title {font-size:16px;font-weight:500;}
+.title_box .count {font-size:16px;}
+.title_box .mlauto {margin-left:auto;}
+
 /* table */
 .commom_tbl {border:1px solid #DEE0E4;}
 .commom_tbl th,
@@ -150,7 +156,9 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 .btn_direct {display:inline-flex;justify-content:center;padding:4px 8px;border-radius:12px;background-color:#ff7556;color:#fff;font-size:12px;font-weight:500;line-height:1em;}
 .btn_direct.type2 {background-color:rgba(36, 36, 36, 0.2);}
 .btn_direct.type3 {background-color:rgba(165, 30, 0, 0.5);}
-.btn_direct .ico {display:inline-block;width:12px;height:12px;margin-right:2px;background:url(../imgs/test/ico_discount.png) center center no-repeat;background-size:contain;}
+.btn_direct .ico {display:inline-block;width:12px;height:12px;margin-right:2px;background:url(../imgs/test/icon_discount.png) center center no-repeat;background-size:contain;}
+.btn_i {display:inline-flex;justify-content:center;width:16px;height:16px;font-size:0;text-indent:-999em;}
+.btn_i .ico {display:inline-block;width:16px;height:16px;background:url(../imgs/test/icon_i.png) center center no-repeat;background-size:contain;}
 
 /* 상품 */
 .common_product .grid {display:flex;flex-wrap: wrap;gap:8px;}
@@ -212,12 +220,28 @@ select:focus {background-image:url(../imgs/test/icon_arrow_up.png);}
 .noticebox dl {padding:12px 16px;}
 .noticebox dt {position:relative;font-size:13px;line-height:13px;}
 .noticebox dt::after {content:'';position:absolute;right:0;top:0;width:12px;height:12px;background:url(../imgs/test/arrow_category.png) center center no-repeat;background-size:contain;transition:0.2s;}
-.noticebox dd {display:none;position:relative;padding-left:6px;margin-top:4px;color:#8f8f8f;font-size:12px;line-height:16px;}
-.noticebox dd::before {content:'';position:absolute;left:0;top:8px;width:2px;height:2px;border-radius:50%;background-color:#8f8f8f;}
+.noticebox dd li {position:relative;padding-left:6px;margin-top:4px;color:#8f8f8f;font-size:12px;line-height:16px;}
+.noticebox dd li::before {content:'';position:absolute;left:0;top:8px;width:2px;height:2px;border-radius:50%;background-color:#8f8f8f;}
 .noticebox dt + dd {padding-top:8px;margin-top:8px;border-top:1px solid #DEE0E4;}
 .noticebox dt + dd::before {top:15px;}
+.noticebox dd .type {margin-top:8px;font-size:12px;line-height:12px;}
 .noticebox .on dt::after {transform:rotate(180deg);}
-.noticebox .on .toggle {display:block;}
+
+/* accordion*/
+.accordion_wrap .toggle {display:none !important;}
+.accordion_wrap .on .toggle {display:block !important;}
+
+/* tooltip */
+.tooltip_wrap {position:relative}
+.tooltip_wrap .message_box {display:none;position:absolute;left:50%;bottom:calc(100% + 12px);z-index:1;width:208px;padding:11px 15px;margin-left:-104px;border:1px solid #e8340c;border-radius:8px;background-color:#fff;color:#242424;font-size:13px;line-height:17px;box-shadow:0px 2px 4px rgba(0, 0, 0, 0.25);}
+.tooltip_wrap .message_box::after,
+.tooltip_wrap .message_box::before {content:'';position:absolute;top:100%;left:50%;width:0;height:0;border:solid transparent;pointer-events:none;}
+.tooltip_wrap .message_box::after {margin-left:-8px;border-color:rgba(255, 255, 255, 0);border-top-color:#fff;border-width:8px;}
+.tooltip_wrap .message_box::before {margin-left:-9px;border-color:rgba(232, 52, 12, 0);border-top-color:#e8340c;border-width:9px;}
+.tooltip_wrap .message_box .text:first-child {padding-right:25px;}
+.tooltip_wrap .message_box .subtext {margin-top:4px;color:#8f8f8f;font-size:12px;line-height:16px;}
+.tooltip_wrap .message_box .close {position:absolute;top:11px;right:15px;width:16px;height:16px;margin-left:auto;background:url(../imgs/test/icon_x.png) center center no-repeat;background-size:contain;text-indent:-999em;}
+.tooltip_wrap.active .message_box {display:block;}
 
 /* floating btn */
 .floating_btn {position:fixed;bottom:-1px;left:0;z-index:6;width:100%;padding:16px 16px 24px;border:1px solid #EDF0F2;border-radius: 24px 24px 0px 0px;background-color:#fff;box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.1);}

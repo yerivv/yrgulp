@@ -44,15 +44,17 @@
 #toolbar ul li.mypage a::before {background-image:url(../imgs/test/toolbar_mypage.png);}
 #toolbar ul li.allmenu a::before {background-image:url(../imgs/test/toolbar_menu.png);}
 
-#floating {display:flex;flex-direction:column;gap:8px;position:fixed;right:16px;bottom:16px;z-index:5;transition:all 0.1s;}
-#floating .top {display:none;}
-#floating .btn {display:block;position:relative;width:44px;height:44px;border-radius:40px;text-indent:-999em;}
-#floating .btn::after {content:'';position:absolute;left:50%;top:50%;width:24px;height:24px;background-position:center center;background-repeat:no-repeat;background-size:contain;transform:translate(-50%, -50%);}
-#floating .btn_top {border:solid 1px #e3e3e3;background-color:rgba(255, 255, 255, 0.7);}
-#floating .btn_top::after {background-image:url(../imgs/test/icon_top.png)}
-#floating .btn_talk {background:linear-gradient(135deg, #FFC397 0%, #E8340C 89.06%)}
-#floating .btn_talk::after {background-image:url(../imgs/test/icon_talk.png)}
-#floating.have_bar {bottom:145px;}
+#top {display:none;position:fixed;right:16px;bottom:-50px;z-index:5;transition:0.1s;}
+#talk {position:fixed;right:16px;bottom:16px;z-index:5;transition:0.1s;}
+#top .btn,
+#talk .btn {display:block;position:relative;width:44px;height:44px;border-radius:40px;text-indent:-999em;}
+#top .btn::after,
+#talk .btn::after {content:'';position:absolute;left:50%;top:50%;width:24px;height:24px;background-position:center center;background-repeat:no-repeat;background-size:contain;transform:translate(-50%, -50%);}
+#top .btn_top {border:solid 1px #e3e3e3;background-color:rgba(255, 255, 255, 0.7);}
+#top .btn_top::after {background-image:url(../imgs/test/icon_top.png)}
+#talk .btn_talk {background:linear-gradient(135deg, #FFC397 0%, #E8340C 89.06%)}
+#talk .btn_talk::after {background-image:url(../imgs/test/icon_talk.png)}
+#talk.have_bar {bottom:145px;}
 
 #footer {padding-bottom:72px;background-color:#535353;}
 #footer .menu {display:flex;}
@@ -79,7 +81,9 @@
 #footer .info .copy {padding:6px 0;margin-top:3px;font-weight:300;}
 
 /* scroll after */
-.scroll #floating {bottom:80px;}
-.scroll #floating .top {display:block;}
-.scroll #floating.have_bar {bottom:145px;}
+.scroll #top {display:block;bottom:80px;}
+.scroll #top.have_bar {bottom:140px;}
+.scroll #talk {bottom:132px;}
+.scroll #talk.have_bar {bottom:192px;}
+.scroll #toolbar {opacity:1;bottom:0;}
 #toolbar.up {opacity:1;bottom:0;}
