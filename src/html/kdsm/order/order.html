@@ -138,7 +138,7 @@
 					<!-- 배송지정보-->
 					<div class="section">
 						<div class="title_box">
-							<h3>2. 주문고객/배송지 정보</h3>
+							<h3 class="title">2. 주문고객/배송지 정보</h3>
 							<div class="tooltip_wrap">
 								<a href="javascript:void(0);" onclick="tooltip(this)" class="click btn_i"><i class="ico"></i></a>
 								<div class="message_box">
@@ -147,31 +147,109 @@
 								</div>
 							</div>
 						</div>
-						<div class="delivery_info">
-							정보노출 css작성
+						<div class="common_tbl tbl_round delivery_info">
+							<table>
+								<caption>배송지 정보</caption>
+								<colgroup>
+									<col width="87"><col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">받으시는분</th>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<th scope="row">전화번호</th>
+										<td>02-123-4567</td>
+									</tr>
+									<tr>
+										<th scope="row">휴대폰</th>
+										<td>010-1234-5678</td>
+									</tr>
+									<tr>
+										<th scope="row">주소</th>
+										<td>06650, 서울특별시 서초구 서초중앙로 85 가산빌딩</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div><!--//section-->
 					<!-- 결제수단 선택-->
 					<div class="section">
 						<div class="title_box">
-							<h3>3. 결제수단 선택</h3>
+							<h3 class="title">3. 결제수단 선택</h3>
 						</div>
-						<div class="delivery_info">
-							정보노출 css작성
+					<form name="Frm">
+						<div class="paymethod_list">
+							<ul class="method_choice">
+								<li class="kdpay">
+									<input type="radio" name="payway" id="payway_kdpay" value="PAYWAY_CARD_KDS" onClick="checkPayway();" />
+									<label for="payway_kdpay" class="fw500"><i class="ico"></i>KD간편결제</label>
+									<!-- <div class="tooltip_wrap discount">
+										<span class="ico_discount">즉시할인</span>
+										<div class="message_box">
+											<strong>즉시할인 프로모션</strong>
+											<p><span>${model.instantDiscountCardNm}</span> 즉시할인 프로모션이 진행 중입니다.</p>
+											※ 적용방법 : 주문/결제 화면에서 신용카드 선택 후 ${fn:substring(model.instantDiscountCardNm, 0, strLength-1)}로 결제
+										</div>
+									</div> -->
+								</li>
+								<li class="card">
+									<input type="radio" name="payway" id="payway_card" value="PAYWAY_CARD" onClick="checkPayway();" />
+									<label for="payway_card"><i class="ico"></i>신용카드</label>
+								</li>
+								<li class="bank">
+									<input type="radio" name="payway" id="payway_bank" value="PAYWAY_BANK" onClick="checkPayway();" />
+									<label for="payway_bank"><i class="ico"></i>실시간 계좌이체</label>
+								</li>
+							</ul>
+							
+							<div class="type_detail">
+								<div id="detail_kdpay" style="display:block;">
+									<ul class="kdpay">
+										<li>
+											<select id="billkey" name="billkey">
+												<option value="">선택하세요.</option>
+												<c:forEach var="row" items="${model.memberPayList}" varStatus="vstatus">
+												<option data-idx="${row.IDX}" data-pg="${row.PG}" data-financecode="${row.FINANCECODE}" data-instanttype="${row.INSTANT_TYPE}" data-iskd="${row.INSTANT_ISKD}" value="${row.BILLKEY}">
+													<c:if test="${row.INSTANT eq 'Y'}">즉시할인 | </c:if>${row.NICKNAME} ㅣ ${row.FINANCENAME}
+												</option>
+												</c:forEach>
+											</select>
+										</li>
+										<li class="period">
+											<select id="installPeriod" name="installPeriod">
+											<option data-noint="00" value="00">일시불</option>
+											</select>
+										</li>
+									</ul>
+									<div class="button_box">
+										<a href="javascript:checkCert(document.Frm)" class="buttons medium"><i class="icoCard"></i>간편결제 카드등록</a>
+									</div>
+									<div class="notice_text">간편결제 무이자 할부는 <span class="fcpoint">카드사 정책에 따라 적용</span>되며, 무이자 관련 상세 내용은 각 카드사에 문의바랍니다.</div>
+								</div>
+								<div id="detail_card">
+									<div class="notice_text"><span class="fcpoint">결제하기 버튼을 클릭</span>하면 ${model.var.cfgCurrentPg } 결제 창으로 연결되며 결제 창에서 결제정보를 입력하실 수 있습니다.</div>
+								</div>
+								<div id="detail_bank">
+									<div class="notice_text"><span class="fcpoint">결제하기 버튼을 클릭</span>하면 ${model.var.cfgCurrentPg } 결제 창으로 연결되며 결제 창에서 결제정보를 입력하실 수 있습니다.</div>
+								</div>
+							</div>
 						</div>
+					</form>
 					</div><!--//section-->
 					<!-- 할인 및 보조결제수단 선택-->
 					<div class="section">
 						<div class="title_box">
 							<h3>4. 할인 및 보조결제수단 선택</h3>
 						</div>
-						<div class="discount_selct">
+						<div class="discount_select">
 							<dl>
 								<dt>
 									<div class="title">쿠폰 정보</div>
 									<div class="have">
-										<span>사용가능 <span class="fcpoint"><strong class="number">0</strong>개</span>
-										<span>보유 <span class="fcpoint"><strong class="number">0</strong>개</span>
+										<span class="box">사용가능 <span class="fcpoint"><strong class="number">0</strong>개</span></span>
+										<span class="box">보유 <span class="fcpoint"><strong class="number">0</strong>개</span></span>
 									</div>
 								</dt>
 								<dd class="coupon">

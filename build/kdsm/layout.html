@@ -1,135 +1,417 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-        <meta charset="UTF-8">
+	    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>KDSM 테스트</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/kdsm.css">
+	<link rel="stylesheet" href="../css/kdsm.css">
 </head>
 <body>
 
-    <div id="wrap" class="wrap">
-        <!-- 상단 -->
-        <div id="header">
-            <h1><a href="#"><img src="../imgs/test/logo.png" alt="광동제약"></a></h1>
-            <div class="search_form">
-                <input type="search" class="input_search" name="" placeholder="검색어를 입력하세요." />
-                <button type="button" class="btn_search">검색</button>
-            </div>
-            <div class="top_btn">
-                <a href="#" class="btn btn_cart">장바구니<span class="label_count">240</span></a>
-                <a href="#" class="btn btn_category">카테고리보기</a>
-            </div>
-            <!-- 카테고리 -->
-            <div id="modal" class="modal modal_category">
-                <div class="head">마이페이지</div>
-                <div class="contents">
-                    내용
-                </div>
-            </div>
-            <!-- //간편장부 -->
-        </div><!-- //topper -->
-        <div id="gnb">
-            <div class="wrap">
-                <ul>
-                    <li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
-                    <li><a href="#">광동전용관</a></li>
-                    <li><a href="#">브랜드관</a></li>
-                    <li><a href="#">주문/배송</a></li>
-                    <li><a href="#">묶음상품</a></li>
-                    <li class="active"><a href="#">정기배송</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- 컨텐츠 박스 영역 -->
-        <div id="container">
-            컨텐츠 내용
-            <div style="height:500px;background-color: aliceblue;"></div>
-            <div style="height:500px;background-color: #eee;"></div>
-            <div style="height:500px;background-color:azure;"></div>
-        </div><!-- //container -->
-        <div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
+	<div id="wrap" class="wrap">
+		<!-- 상단 -->
+		<div id="header">
+			<h1><a href="#"><img src="../imgs/global/logo.png" alt="광동제약"></a></h1>
+			<div class="search_form">
+				<input type="search" class="input_search" name="" placeholder="검색어를 입력하세요." />
+				<button type="button" class="btn_search">검색</button>
+			</div>
+			<div class="top_btn">
+				<a href="#" class="btn btn_cart">장바구니<span class="label_count">240</span></a>
+				<a href="javascript:void(0);" onclick="modalOpen('modal_category')" class="btn btn_category">카테고리보기</a>
+			</div>
+		</div><!-- //topper -->
+		
+		<div id="modal" class="modalFull modal_category">
+	<div class="wrap">
+		<div class="head">
+			<h2>카테고리</h2>
+			<div class="close" onclick="modalClose('modal_category');">닫기</div>
+		</div>
+		<div class="contents">
+			1111
+		</div>
+	</div>
+</div>
+
+		<div id="gnb">
+			<div class="wrap">
+				<ul>
+					<li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
+					<li><a href="#">광동전용관</a></li>
+					<li><a href="#">브랜드관</a></li>
+					<li><a href="#">주문/배송</a></li>
+					<li><a href="#">묶음상품</a></li>
+					<li class="active"><a href="#">정기배송</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 컨텐츠 박스 영역 -->
+		<div id="container">
+			컨텐츠 내용
+			<div style="height:500px;background-color: aliceblue;"></div>
+			<div style="height:500px;background-color: #eee;"></div>
+			<div style="height:500px;background-color:azure;"></div>
+		</div><!-- //container -->
+		<div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
 		<div id="top" class="top"><a href="#" class="btn btn_top">TOP</a></div>
-        <div id="toolbar">
-            <ul>
-                <li class="home active"><a href="#">홈</a></li>
-                <li class="repurchase"><a href="#">재구매</a></li>
-                <li class="ledger"><a href="#">간편장부</a></li>
-                <li class="mypage"><a href="javascript:void(0)" onclick="modalFull('modal_mypage');">마이페이지</a></li>
-                <li class="allmenu"><a href="#">전체메뉴</a></li>
-            </ul>
-        </div>
-        <!-- 하단 -->
-        <div id="footer">
-            <div class="footer_menu">
-                <ul class="menu">
-                    <li><a href="#">입점업체안내</a></li>
-                    <li><a href="#">배송안내</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">1:1문의</a></li>
-                </ul>
-            </div>
-            <div class="innerbox">
-                <div class="customer">
-                    <h6 class="blind">고객센터</h6>
-                    <a href="tel:080-024-0030" class="tel number">080-024-0030</a>
-                    <a href="tel:080-024-0030" class="btn_tel">전화걸기<i></i></a>
-                    <dl>
-                        <dt class="blind">운영시간</dt>
-                        <dd>평일 (토/일/공휴일 휴무)</dd>
-                        <dd>점심시간 12:30 ~ 13:30</dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <ul class="menu">
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
-                        <li><a href="#">수신동의</a></li>
-                        <li><a href="#">PC버전</a></li>
-                    </ul>
-                    <address>
-                        서울 서초구 서초중앙로 85 (서초동, 가산빌딩)<br>
-                        사업자등록번호 : 113-81-08888<br>
-                        통신판매업신고 : 2015-서울서초-1283호
-                        <a href="javascript:void(window.open('http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=113-81-08888','communicationViewPopup','width=750,height=700,scrollbars=yes'))" class="btn_biz">사업자정보 확인</a>
-                    </address>
-                    <p class="copy">ⓒ KWANGDONG PHARMACEUTICAL CO,. LTD. ALL RIGHT RESERVED</p>
-                </div>
-            </div>
-        </div><!-- //footer -->
-    </div><!-- //wrap -->
+		<div id="toolbar">
+			<ul>
+				<li class="home active"><a href="#">홈</a></li>
+				<li class="repurchase"><a href="#">재구매</a></li>
+				<li class="ledger"><a href="javascript:void(0)" onclick="ledger(this)">간편장부</a></li>
+				<li class="mypage"><a href="javascript:void(0)" onclick="modalOpen('modal_mypage');">마이페이지</a></li>
+				<li class="allmenu"><a href="javascript:void(0)" onclick="modalOpen('modal_allmenu');">전체메뉴</a></li>
+			</ul>
+		</div>
 
-    <script>
-        const gnbPosition = () => {
-            let gnbWrap = document.querySelector('#gnb .wrap');
-            let gnbMenu = gnbWrap.querySelector('ul');
-            let gnbItem = gnbMenu.querySelectorAll('li');
-            let gnbActive = gnbWrap.querySelector('.active');
-            let sum = 0;
+		<!-- 간편장부 -->
+<div id="layer" class="layer_ledger">
+	<div class="dimd"></div>
+	<div class="wrap">
+		<div class="head">
+			<h2>
+				<span class="imgs"><img src="../imgs/global/ex_membership.png" onerror="this.src='../imgs/global/no.gif'" alt="등급명" /></span>
+				<div class="name"><strong class="fw500">홍길덩</strong> 약사님</div>
+			</h2>
+		</div>
+		<div class="contents">
+			<ul class="menu_icon_list">
+				<li><a href="../mypage/recommend.do"><i class="ico recommend"></i><span>추천상품<span class="label_count">32</span></span></a></li>
+				<li><a href="#"><i class="ico reorder"></i><span>재구매</span></a></li>
+				<li><a href="../mypage/order_delivery.do"><i class="ico order"></i><span>주문/배송</span></a></li>
+			</ul>
+			<div class="order_info">
+				<dl class="ordercnt">
+					<dt>이번달 주문건</dt>
+					<dd><strong class="number">20</strong>건</dd>
+				</dl>
+				<dl class="orderamt">
+					<dt>이번달 주문금액</dt>
+					<dd><strong class="number">500,000</strong>원</dd>
+				</dl>
+			</div>
+			<div class="common_tbl tbl_round benefit_info">
+				<table>
+					<caption>나의 혜택 내역</caption>
+					<colgroup>
+						<col width="120" /><col width="*" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">쿠폰</th>
+							<td><strong class="number">7</strong>개</td>
+						</tr>
+						<tr>
+							<th scope="row">마이너스 잔고</th>
+							<td><strong class="number">5,000,000</strong>개</td>
+						</tr>
+						<tr>
+							<th scope="row">마일리지</th>
+							<td><strong class="number">5,000,000</strong>P</td>
+						</tr>
+						<tr>
+							<th scope="row">예치금</th>
+							<td>
+								<span class="fcpoint"><strong class="number">10,000,000</strong>원</span>
+								<a href="../mypage/deposit_charge_pop.do" target="_blank" onClick="return charge(this)" class="buttons xsmall fill">충전</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!-- //common_tbl -->
+			<!-- 담당자 안내 -->
+			<div class="person_info">
+				<ul>
+					<li>
+						<div class="name"><strong class="fw500 fcdefault">영업담당자</strong> 홍길동</div>
+						<div class="number fw500">010-1234-4567</div>
+						<div class="btns">
+							<a href="../cscenter/sms.do" class="btn_circle"><i class="ico sms"></i>문자보내기</a>
+							<a href="tel:${GLOBAL.authmemberpernrtel}" class="btn_circle"><i class="ico tel"></i>전화하기</a>
+						</div>
+					</li>
+					<li>
+						<div class="name"><strong class="fw500 fcdefault">배송담당자</strong> 홍길동</div>
+						<div class="number fw500">010-1234-4567</div>
+						<div class="btns">
+							<a href="../cscenter/sms.do" class="btn_circle"><i class="ico sms"></i>문자보내기</a>
+							<a href="tel:${GLOBAL.authdtcmemberpernrtel}" class="btn_circle"><i class="ico tel"></i>전화하기</a>
+						</div>
+					</li>
+				</ul>
+			</div><!-- //person_info -->
+		</div>
+	</div>
+</div><!-- //modal_ledger -->
+		<div id="modal" class="modalFull modal_mypage">
+	<div class="wrap">
+		<div class="head">
+			<h2>마이페이지</h2>
+			<div class="close" onclick="modalClose('modal_mypage');">닫기</div>
+		</div>
+		<div class="contents">
+			<div class="mypage_index">
+				<ol class="order">
+					<li>
+						<a href="../mypage/order_delivery.do?sordstep=200" class="step">
+							<i class="ico step1"></i>
+							<span class="count fcpoint"><strong class="number">0</strong>건</span>
+							<span class="text">결제완료</span>
+						</a>
+					</li>
+					<li>
+						<a href="../mypage/order_delivery.do?sordstep=300" class="step">
+							<i class="ico step2"></i>
+							<span class="count fcpoint"><strong class="number">8</strong>건</span>
+							<span class="text">상품준비중</span>
+						</a>
+					</li>
+					<li>
+						<a href="../mypage/order_delivery.do?sordstep=510" class="step">
+							<i class="ico step3"></i>
+							<span class="count fcpoint"><strong class="number">1</strong>건</span>
+							<span class="text">배송중</span>
+						</a>
+					</li>
+					<li>
+						<a href="../mypage/order_delivery.do?sordstep=590" class="step">
+							<i class="ico step4"></i>
+							<span class="count fcpoint"><strong class="number">0</strong>건</span>
+							<span class="text">배송완료</span>
+						</a>
+					</li>
+				</ol>
+				<div class="product">
+					<div class="wish">
+						<a href="../mypage/wish.do" class="title">
+							<span>관심상품</span>
+							<span class="count fcdefault"><strong class="number">1</strong>건</span>
+						</a>
+						<!-- <div class="none">내역이 없습니다.</div> -->
+						<div class="thumb_list">
+							<ul>
+								<li>
+									<a href="/goods/category.do?gno=399315" class="thumb_box">
+										<img src="" onerror="this.src='../imgs/global/no.gif'" alt="하일렌점안액(1회용)(0.5mL)" class="thumb">
+									</a>
+								</li>
+								<li>
+									<a href="/goods/category.do?gno=399315" class="thumb_box">
+										<img src="" onerror="this.src='../imgs/global/no.gif'" alt="하일렌점안액(1회용)(0.5mL)" class="thumb">
+									</a>
+								</li>
+								<li>
+									<a href="/goods/category.do?gno=399315" class="thumb_box">
+										<img src="" onerror="this.src='../imgs/global/no.gif'" alt="하일렌점안액(1회용)(0.5mL)" class="thumb">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="restock">
+						<a href="../mypage/restock.do" class="title">
+							<span>재입고 알림 내역</span>
+							<span class="count fcdefault"><strong class="number">1</strong>건</span>
+						</a>
+						<!-- <div class="none">내역이 없습니다.</div> -->
+						<div class="thumb_list">
+							<ul>
+								<li>
+									<a href="/goods/category.do?gno=171324" class="thumb_box">
+										<img src="https://kdshop.co.kr/data/base/goods/small/20220221/86f467bbd6c3432188b64313d83aca57.jpg" alt="카멕스립밤클래식스틱"  onerror="this.src='../imgs/test/no.gif'" class="thumb">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="menu_list accordions_wrap">
+					<dl>
+						<dt onclick="accordions(this);">MY 쇼핑</dt>
+						<dd class="toggle">
+							<ul>
+								<li><a href="">주문/배송 조회</a></li>
+								<li><a href="">주문취소내역</a></li>
+								<li><a href="">주문상품 재구매</a></li>
+								<li><a href="">반품내역/신청</a></li>
+								<li><a href="">거래원장</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="menu_list accordions_wrap">
+					<dl>
+						<dt onclick="accordions(this);">MY 혜택/결제</dt>
+						<dd class="toggle">
+							<ul>
+								<li><a href="">쿠폰내역</a></li>
+								<li><a href="">마일리지 내역</a></li>
+								<li><a href="">예치금 내역 및 충전</a></li>
+								<li><a href="">마이너스잔고 내역</a></li>
+								<li><a href="">약가인하</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="menu_list accordions_wrap">
+					<dl>
+						<dt onclick="accordions(this);">MY 상품</dt>
+						<dd class="toggle">
+							<ul>
+								<li><a href="">정기배송관리</a></li>
+								<li><a href="">공동구매관리</a></li>
+								<li><a href="">재입고알림 내역</a></li>
+								<li><a href="">관심상품</a></li>
+								<li><a href="">추천상품</a></li>
+								<li><a href="">예약주문관리</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="menu_list accordions_wrap">
+					<dl>
+						<dt onclick="accordions(this);">MY 간편결제</dt>
+						<dd class="toggle">
+							<ul>
+								<li><a href="">KD 간편결제관리</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="menu_list accordions_wrap">
+					<dl>
+						<dt onclick="accordions(this);">MY 정보</dt>
+						<dd class="toggle">
+							<ul>
+								<li><a href="">회원등급안내</a></li>
+								<li><a href="">회원정보확인/수정</a></li>
+								<li><a href="">탈퇴신청</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="button_box">
+				<a href="../cscenter" class="buttons white fcdefault">고객센터</a>
+				<a href="../logout" class="buttons white fcdefault">로그아웃</a>
+			</div>
+		</div>
+	</div>
+</div>
+		<div id="modal" class="modalFull modal_allmenu">
+	<div class="wrap">
+		<div class="head">
+			<h2>전체메뉴</h2>
+			<div class="close" onclick="modalClose('modal_allmenu');">닫기</div>
+		</div>
+		<div class="contents">
+			<ul class="menu_icon_list">
+				<li><a href="../mypage/recommend.do"><i class="ico recommend"></i><span>추천상품<span class="label_count">32</span></span></a></li>
+				<li><a href="../goods/kdspace.do"><i class="ico kdspace"></i><span>광동전용관</span></a></li>
+				<li><a href="../goods/brand.do"><i class="ico brand"></i><span>브랜드관</span></a></li>
+				<li><a href="../goods/regular.do"><i class="ico regular"></i><span>정기배송</span></a></li>
+				<li><a href="../goods/bundle.do"><i class="ico bundle"></i><span>묶음상품</span></a></li>
+				<li><a href="../goods/timesale.do"><i class="ico timesale"></i><span>타임세일</span></a></li>
+				<li><a href="../goods/special.do"><i class="ico special"></i><span>특가세일</span></a></li>
+				<li><a href="../goods/groupbuying.do"><i class="ico groupbuying"></i><span>공동구매</span></a></li>
+				<li><a href="../board/showroom.do"><i class="ico showroom"></i><span>온라인쇼룸</span></a></li>
+				<li><a href="../goods/event_list.do"><i class="ico event"></i><span>이벤트</span></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 
-            if(gnbActive !== null){
-                gnbItem.forEach((item, index) => {
-                    //console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
-                    sum += item.clientWidth;
-                }); 
-                gnbMenu.style.cssText = 'width:'+ sum + 'px';
-                
-                let screen = window.innerWidth;
-                let activeWidth = gnbActive.clientWidth;
-                let activeLeft = gnbActive.offsetLeft;
-                //console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
-                if(sum-screen >= 0) {
-                    //console.log('크다')
-                    gnbWrap.scrollLeft = activeLeft;
-                }
-            }
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(gnbPosition, 100);
-        });
-    </script>
-    <script src="../js/util.js"></script>
+		<!-- 하단 -->
+		<div id="footer">
+			<div class="footer_menu">
+				<ul class="menu">
+					<li><a href="#">입점업체안내</a></li>
+					<li><a href="#">배송안내</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">1:1문의</a></li>
+				</ul>
+			</div>
+			<div class="innerbox">
+				<div class="customer">
+					<h6 class="blind">고객센터</h6>
+					<a href="tel:080-024-0030" class="tel number">080-024-0030</a>
+					<a href="tel:080-024-0030" class="btn_tel">전화걸기<i></i></a>
+					<dl>
+						<dt class="blind">운영시간</dt>
+						<dd>평일 (토/일/공휴일 휴무)</dd>
+						<dd>점심시간 12:30 ~ 13:30</dd>
+					</dl>
+				</div>
+				<div class="info">
+					<ul class="menu">
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#"><strong>개인정보처리방침</strong></a></li>
+						<li><a href="javascript:void(0)" onclick="modalOpen('modal_agree');">수신동의</a></li>
+						<li><a href="#">PC버전</a></li>
+					</ul>
+					<address>
+						서울 서초구 서초중앙로 85 (서초동, 가산빌딩)<br>
+						사업자등록번호 : 113-81-08888<br>
+						통신판매업신고 : 2015-서울서초-1283호
+						<a href="javascript:void(window.open('http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=113-81-08888','communicationViewPopup','width=750,height=700,scrollbars=yes'))" class="btn_biz">사업자정보 확인</a>
+					</address>
+					<p class="copy">ⓒ KWANGDONG PHARMACEUTICAL CO,. LTD. ALL RIGHT RESERVED</p>
+				</div>
+			</div>
+		</div><!-- //footer -->
+		<div id="modal" class="modalCenter modal_agree">
+	<div class="wrap">
+		<div class="head">
+			<h2>수신동의</h2>
+			<div class="close" onclick="modalClose('modal_agree');">닫기</div>
+		</div>
+		<div class="contents">
+			<p>등록하신 휴대폰 번호, 이메일로 다양한 혜택과 이벤트 정보를 받으실 수 있습니다.</p>
+			<ul>
+				<li>
+					<input type="checkbox" name="" id="" /><label for="">광고성 정보수신</label>
+				</li>
+				<li>
+					<input type="checkbox" name="" id="" /><label for="">마케팅 정보 활용 동의</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	</div><!-- //wrap -->
+
+	<script>
+		const gnbPosition = () => {
+			let gnbWrap = document.querySelector('#gnb .wrap');
+			let gnbMenu = gnbWrap.querySelector('ul');
+			let gnbItem = gnbMenu.querySelectorAll('li');
+			let gnbActive = gnbWrap.querySelector('.active');
+			let sum = 0;
+
+			if(gnbActive !== null){
+				gnbItem.forEach((item, index) => {
+					//console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
+					sum += item.clientWidth;
+				}); 
+				gnbMenu.style.cssText = 'width:'+ sum + 'px';
+				
+				let screen = window.innerWidth;
+				let activeWidth = gnbActive.clientWidth;
+				let activeLeft = gnbActive.offsetLeft;
+				//console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
+				if(sum-screen >= 0) {
+					//console.log('크다')
+					gnbWrap.scrollLeft = activeLeft;
+				}
+			}
+		}
+		document.addEventListener("DOMContentLoaded", function () {
+			setTimeout(gnbPosition, 100);
+		});
+	</script>
+	<script src="../js/util.js"></script>
 </body>
 </html>

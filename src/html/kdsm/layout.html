@@ -1,133 +1,134 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    @@include('@@webRoot/include/head.html',{
-        "title":"KDSM 테스트"
-    })
-    <link rel="stylesheet" href="@@webRoot/css/kdsm.css">
+	@@include('@@webRoot/include/head.html',{
+		"title":"KDSM 테스트"
+	})
+	<link rel="stylesheet" href="@@webRoot/css/kdsm.css">
 </head>
 <body>
 
-    <div id="wrap" class="wrap">
-        <!-- 상단 -->
-        <div id="header">
-            <h1><a href="#"><img src="@@webRoot/imgs/test/logo.png" alt="광동제약"></a></h1>
-            <div class="search_form">
-                <input type="search" class="input_search" name="" placeholder="검색어를 입력하세요." />
-                <button type="button" class="btn_search">검색</button>
-            </div>
-            <div class="top_btn">
-                <a href="#" class="btn btn_cart">장바구니<span class="label_count">240</span></a>
-                <a href="#" class="btn btn_category">카테고리보기</a>
-            </div>
-            <!-- 카테고리 -->
-            <div id="modal" class="modal modal_category">
-                <div class="head">마이페이지</div>
-                <div class="contents">
-                    내용
-                </div>
-            </div>
-            <!-- //간편장부 -->
-        </div><!-- //topper -->
-        <div id="gnb">
-            <div class="wrap">
-                <ul>
-                    <li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
-                    <li><a href="#">광동전용관</a></li>
-                    <li><a href="#">브랜드관</a></li>
-                    <li><a href="#">주문/배송</a></li>
-                    <li><a href="#">묶음상품</a></li>
-                    <li class="active"><a href="#">정기배송</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- 컨텐츠 박스 영역 -->
-        <div id="container">
-            컨텐츠 내용
-            <div style="height:500px;background-color: aliceblue;"></div>
-            <div style="height:500px;background-color: #eee;"></div>
-            <div style="height:500px;background-color:azure;"></div>
-        </div><!-- //container -->
-        <div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
+	<div id="wrap" class="wrap">
+		<!-- 상단 -->
+		<div id="header">
+			<h1><a href="#"><img src="@@webRoot/imgs/global/logo.png" alt="광동제약"></a></h1>
+			<div class="search_form">
+				<input type="search" class="input_search" name="" placeholder="검색어를 입력하세요." />
+				<button type="button" class="btn_search">검색</button>
+			</div>
+			<div class="top_btn">
+				<a href="#" class="btn btn_cart">장바구니<span class="label_count">240</span></a>
+				<a href="javascript:void(0);" onclick="modalOpen('modal_category')" class="btn btn_category">카테고리보기</a>
+			</div>
+		</div><!-- //topper -->
+		
+		@@include('@@webRoot/modal/modal_category.html')
+
+		<div id="gnb">
+			<div class="wrap">
+				<ul>
+					<li><a href="#">추천상품<span class="label_count etc">32</span></a></li>
+					<li><a href="#">광동전용관</a></li>
+					<li><a href="#">브랜드관</a></li>
+					<li><a href="#">주문/배송</a></li>
+					<li><a href="#">묶음상품</a></li>
+					<li class="active"><a href="#">정기배송</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 컨텐츠 박스 영역 -->
+		<div id="container">
+			컨텐츠 내용
+			<div style="height:500px;background-color: aliceblue;"></div>
+			<div style="height:500px;background-color: #eee;"></div>
+			<div style="height:500px;background-color:azure;"></div>
+		</div><!-- //container -->
+		<div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
 		<div id="top" class="top"><a href="#" class="btn btn_top">TOP</a></div>
-        <div id="toolbar">
-            <ul>
-                <li class="home active"><a href="#">홈</a></li>
-                <li class="repurchase"><a href="#">재구매</a></li>
-                <li class="ledger"><a href="#">간편장부</a></li>
-                <li class="mypage"><a href="javascript:void(0)" onclick="modalFull('modal_mypage');">마이페이지</a></li>
-                <li class="allmenu"><a href="#">전체메뉴</a></li>
-            </ul>
-        </div>
-        <!-- 하단 -->
-        <div id="footer">
-            <div class="footer_menu">
-                <ul class="menu">
-                    <li><a href="#">입점업체안내</a></li>
-                    <li><a href="#">배송안내</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">1:1문의</a></li>
-                </ul>
-            </div>
-            <div class="innerbox">
-                <div class="customer">
-                    <h6 class="blind">고객센터</h6>
-                    <a href="tel:080-024-0030" class="tel number">080-024-0030</a>
-                    <a href="tel:080-024-0030" class="btn_tel">전화걸기<i></i></a>
-                    <dl>
-                        <dt class="blind">운영시간</dt>
-                        <dd>평일 (토/일/공휴일 휴무)</dd>
-                        <dd>점심시간 12:30 ~ 13:30</dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <ul class="menu">
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
-                        <li><a href="#">수신동의</a></li>
-                        <li><a href="#">PC버전</a></li>
-                    </ul>
-                    <address>
-                        서울 서초구 서초중앙로 85 (서초동, 가산빌딩)<br>
-                        사업자등록번호 : 113-81-08888<br>
-                        통신판매업신고 : 2015-서울서초-1283호
-                        <a href="javascript:void(window.open('http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=113-81-08888','communicationViewPopup','width=750,height=700,scrollbars=yes'))" class="btn_biz">사업자정보 확인</a>
-                    </address>
-                    <p class="copy">ⓒ KWANGDONG PHARMACEUTICAL CO,. LTD. ALL RIGHT RESERVED</p>
-                </div>
-            </div>
-        </div><!-- //footer -->
-    </div><!-- //wrap -->
+		<div id="toolbar">
+			<ul>
+				<li class="home active"><a href="#">홈</a></li>
+				<li class="repurchase"><a href="#">재구매</a></li>
+				<li class="ledger"><a href="javascript:void(0)" onclick="ledger(this)">간편장부</a></li>
+				<li class="mypage"><a href="javascript:void(0)" onclick="modalOpen('modal_mypage');">마이페이지</a></li>
+				<li class="allmenu"><a href="javascript:void(0)" onclick="modalOpen('modal_allmenu');">전체메뉴</a></li>
+			</ul>
+		</div>
 
-    <script>
-        const gnbPosition = () => {
-            let gnbWrap = document.querySelector('#gnb .wrap');
-            let gnbMenu = gnbWrap.querySelector('ul');
-            let gnbItem = gnbMenu.querySelectorAll('li');
-            let gnbActive = gnbWrap.querySelector('.active');
-            let sum = 0;
+		@@include('@@webRoot/modal/modal_ledger.html')
+		@@include('@@webRoot/modal/modal_mypage.html')
+		@@include('@@webRoot/modal/modal_allmenu.html')
 
-            if(gnbActive !== null){
-                gnbItem.forEach((item, index) => {
-                    //console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
-                    sum += item.clientWidth;
-                }); 
-                gnbMenu.style.cssText = 'width:'+ sum + 'px';
-                
-                let screen = window.innerWidth;
-                let activeWidth = gnbActive.clientWidth;
-                let activeLeft = gnbActive.offsetLeft;
-                //console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
-                if(sum-screen >= 0) {
-                    //console.log('크다')
-                    gnbWrap.scrollLeft = activeLeft;
-                }
-            }
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(gnbPosition, 100);
-        });
-    </script>
-    <script src="@@webRoot/js/util.js"></script>
+		<!-- 하단 -->
+		<div id="footer">
+			<div class="footer_menu">
+				<ul class="menu">
+					<li><a href="#">입점업체안내</a></li>
+					<li><a href="#">배송안내</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">1:1문의</a></li>
+				</ul>
+			</div>
+			<div class="innerbox">
+				<div class="customer">
+					<h6 class="blind">고객센터</h6>
+					<a href="tel:080-024-0030" class="tel number">080-024-0030</a>
+					<a href="tel:080-024-0030" class="btn_tel">전화걸기<i></i></a>
+					<dl>
+						<dt class="blind">운영시간</dt>
+						<dd>평일 (토/일/공휴일 휴무)</dd>
+						<dd>점심시간 12:30 ~ 13:30</dd>
+					</dl>
+				</div>
+				<div class="info">
+					<ul class="menu">
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#"><strong>개인정보처리방침</strong></a></li>
+						<li><a href="javascript:void(0)" onclick="modalOpen('modal_agree');">수신동의</a></li>
+						<li><a href="#">PC버전</a></li>
+					</ul>
+					<address>
+						서울 서초구 서초중앙로 85 (서초동, 가산빌딩)<br>
+						사업자등록번호 : 113-81-08888<br>
+						통신판매업신고 : 2015-서울서초-1283호
+						<a href="javascript:void(window.open('http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=113-81-08888','communicationViewPopup','width=750,height=700,scrollbars=yes'))" class="btn_biz">사업자정보 확인</a>
+					</address>
+					<p class="copy">ⓒ KWANGDONG PHARMACEUTICAL CO,. LTD. ALL RIGHT RESERVED</p>
+				</div>
+			</div>
+		</div><!-- //footer -->
+		@@include('@@webRoot/modal/modal_agree.html')
+	</div><!-- //wrap -->
+
+	<script>
+		const gnbPosition = () => {
+			let gnbWrap = document.querySelector('#gnb .wrap');
+			let gnbMenu = gnbWrap.querySelector('ul');
+			let gnbItem = gnbMenu.querySelectorAll('li');
+			let gnbActive = gnbWrap.querySelector('.active');
+			let sum = 0;
+
+			if(gnbActive !== null){
+				gnbItem.forEach((item, index) => {
+					//console.log('Index: ' + index + ' data-width: ' + item.clientWidth+ ' left: ' + item.offsetLeft);
+					sum += item.clientWidth;
+				}); 
+				gnbMenu.style.cssText = 'width:'+ sum + 'px';
+				
+				let screen = window.innerWidth;
+				let activeWidth = gnbActive.clientWidth;
+				let activeLeft = gnbActive.offsetLeft;
+				//console.log('screen:'+screen+', width:'+sum+', activeLeft:'+activeLeft+'/ '+(sum-screen)+','+(sum-screen-(activeLeft/2)))
+				if(sum-screen >= 0) {
+					//console.log('크다')
+					gnbWrap.scrollLeft = activeLeft;
+				}
+			}
+		}
+		document.addEventListener("DOMContentLoaded", function () {
+			setTimeout(gnbPosition, 100);
+		});
+	</script>
+	<script src="@@webRoot/js/util.js"></script>
 </body>
 </html>

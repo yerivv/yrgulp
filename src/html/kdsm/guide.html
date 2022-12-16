@@ -298,7 +298,7 @@
 			<div class="section">
 				<h2>Table</h2>
 				<h3>데이터형 테이블<small>(.tbl_row)</small></h3>
-				<table class="commom_tbl tbl_row">
+				<table class="common_tbl tbl_row">
 					<caption>상품 정보 표</caption>
 					<colgroup>
 						<col width="40%" /><col width="60%" />
@@ -311,7 +311,7 @@
 					</tbody>
 				</table>
 				<h3>목록형 테이블<small>(.tbl_col)</small></h3>
-				<table class="commom_tbl tbl_col">
+				<table class="common_tbl tbl_col">
 					<caption>상품 정보 고시 표</caption>
 					<colgroup>
 						<col width="40%" /><col width="60%" />
@@ -430,7 +430,7 @@
 					<div class="grid">
 						<div class="item">
 							<div class="thumb_box">
-								<div class="thumb"><img src="" onerror="this.src='@@webRoot/imgs/test/no.gif'" alt=""></div>
+								<div class="thumb"><img src="" onerror="this.src='@@webRoot/imgs/global/no.gif'" alt=""></div>
 								<div class="iconlabel_box">
 									<a href="#" class="label sale">특가</a>
 								</div>
@@ -578,7 +578,7 @@
 					<div class="list">
 						<div class="item">
 							<div class="thumb_box">
-								<div class="thumb"><img src="" onerror="this.src='@@webRoot/imgs/test/no.gif'" alt=""></div>
+								<div class="thumb"><img src="" onerror="this.src='@@webRoot/imgs/global/no.gif'" alt=""></div>
 								<div class="iconlabel_box">
 									<a href="#" class="label sale">특가</a>
 								</div>
@@ -737,6 +737,47 @@
 				<h3>Full</h3>
 				<div class="button_box single">
 					<a href="javascript:void(0)" onclick="modalOpen('modal_detail')" class="btn small">열기</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="guide_container">
+			<div class="section">
+				<h2>Tooltip</h2>
+				<h3>Left</h3>
+				<div style="display:flex;">
+					<div class="discount tooltip_wrap">
+						<a href="javascript:void(0);" onclick="tooltip(this)" class="click btn_direct"><i class="ico"></i>즉시할인</a>
+						<div class="message_box">
+							<p class="text"><span class="fcpoint">우리/롯데</span> 즉시할인 프로모션이 진행 중입니다.</p>
+							<p class="subtext">주문/결제 화면에서 신용카드 선택 후 우리, 롯데로 결제</p>
+							<span class="close">닫기</span>
+						</div>
+					</div>
+				</div>
+
+				<h3>Center</h3>
+				<div style="display:flex;justify-content:center;">
+					<div class="discount tooltip_wrap">
+						<a href="javascript:void(0);" onclick="tooltip(this)" class="click btn_direct"><i class="ico"></i>즉시할인</a>
+						<div class="message_box">
+							<p class="text"><span class="fcpoint">우리/롯데</span> 즉시할인 프로모션이 진행 중입니다.</p>
+							<p class="subtext">주문/결제 화면에서 신용카드 선택 후 우리, 롯데로 결제</p>
+							<span class="close">닫기</span>
+						</div>
+					</div>
+				</div>
+
+				<h3>Right</h3>
+				<div style="display:flex;justify-content:flex-end;">
+					<div class="discount tooltip_wrap">
+						<a href="javascript:void(0);" onclick="tooltip(this)" class="click btn_direct"><i class="ico"></i>즉시할인</a>
+						<div class="message_box">
+							<p class="text"><span class="fcpoint">우리/롯데</span> 즉시할인 프로모션이 진행 중입니다.</p>
+							<p class="subtext">주문/결제 화면에서 신용카드 선택 후 우리, 롯데로 결제</p>
+							<span class="close">닫기</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

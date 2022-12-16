@@ -1,7 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const vh = window.innerHeight * 0.01;
-	document.querySelector('html').style.cssText = '--vh:'+vh+'px';
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     const vh = window.innerHeight * 0.01;
+// 	document.querySelector('html').style.cssText = '--vh:'+vh+'px';
+// });
+function setScreenSize(){
+    let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setScreenSize();
+window.addEventListener('resize', setScreenSize);
 
 window.addEventListener('scroll', function() {
     const top = this.scrollY;
@@ -43,25 +49,25 @@ function accordions(a){
 }
 
 //탭구현
-const tabInit = (a) => {
-    let tabWrap = document.querySelector(a);
-    let tabs = tabWrap.querySelectorAll('.menu_tab li');
-    let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
+// const tabInit = (a) => {
+//     let tabWrap = document.querySelector(a);
+//     let tabs = tabWrap.querySelectorAll('.menu_tab li');
+//     let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
 
-    tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-            const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
-            tabContents.forEach((tabContent) => {
-                tabContent.classList.remove('active')
-            });
-            tabs.forEach((tab) => {
-                tab.classList.remove('active')
-            });
-            target.classList.add('active')
-            tab.classList.add('active')
-        })
-    })
-}
+//     tabs.forEach((tab) => {
+//         tab.addEventListener('click', () => {
+//             const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
+//             tabContents.forEach((tabContent) => {
+//                 tabContent.classList.remove('active')
+//             });
+//             tabs.forEach((tab) => {
+//                 tab.classList.remove('active')
+//             });
+//             target.classList.add('active')
+//             tab.classList.add('active')
+//         })
+//     })
+// }
 
 function isModal(){
     let body = document.querySelector('body');
@@ -87,14 +93,34 @@ function modalClose(a){
     isModal();
 }
 
+function layerOpen(a){
+    let target = document.querySelector('.'+a);
+    target.classList.add('open');
+
+    target.querySelector('.dimd').addEventListener('click', function(){
+		target.classList.remove('open');
+	})
+}
+
 //tooltip
 function tooltip(a){
-    const target = a.closest('.tooltip_wrap');
-    target.classList.toggle('active');
-
-    const close = target.querySelector('.close').addEventListener('click', function(){
-        target.classList.remove('active');
-    })
+	const target = a.closest('.tooltip_wrap');
+	const message = target.querySelector('.message_box');
+	const arrow = document.createElement('span');
+	arrow.className = 'arrow_down';
+	
+	if(target.classList.contains('active')){
+		target.classList.remove('active');
+		target.querySelector('.arrow_down').remove();
+	} else {
+		target.classList.add('active');
+		target.append(arrow);
+	}
+	
+	const close = target.querySelector('.close').addEventListener('click', function(){
+		target.classList.remove('active');
+		arrow.remove();
+	})
 }
 
 const controlCate = () => {
@@ -130,23 +156,23 @@ function cateReady(){
     }
 }
 
-//아코디언
-// const accordions = document.querySelectorAll('.accordion');
-// console.log(accordions)
-// accordions.forEach(function(accordion, index) {
-//     accordion.addEventListener('click', function(e) {
-//         e.preventDefault();
-        
-//         this.parentNode.classList.toggle('on');
-        
-//         accordions.forEach(function(accordion2, index2) {
-//             if ( index !== index2 ) {
-//                 accordion2.parentNode.classList.remove('on');
-//             }
-//         });
-//     });
-// });
+//간편장부
+function ledger(a){
+    const li = a.closest('li');
+    const target = document.querySelector('.layer_ledger');
 
+    if(li.classList.contains('active')){
+        target.classList.remove('open');
+        li.classList.remove('active');
+    } else {
+        target.classList.add('open');
+        li.classList.add('active');
+        target.querySelector('.dimd').addEventListener('click', function(){
+            target.classList.remove('open');
+            li.classList.remove('active');
+        })
+    }
+}
 
 // let lastScroll = document.documentElement.scrollTop || 0;
 // let isScrolling;
