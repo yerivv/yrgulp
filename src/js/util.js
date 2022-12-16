@@ -49,25 +49,25 @@ function accordions(a){
 }
 
 //탭구현
-// const tabInit = (a) => {
-//     let tabWrap = document.querySelector(a);
-//     let tabs = tabWrap.querySelectorAll('.menu_tab li');
-//     let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
+const tabInit = (a) => {
+    let tabWrap = document.querySelector(a);
+    let tabs = tabWrap.querySelectorAll('.menu_tab li');
+    let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
 
-//     tabs.forEach((tab) => {
-//         tab.addEventListener('click', () => {
-//             const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
-//             tabContents.forEach((tabContent) => {
-//                 tabContent.classList.remove('active')
-//             });
-//             tabs.forEach((tab) => {
-//                 tab.classList.remove('active')
-//             });
-//             target.classList.add('active')
-//             tab.classList.add('active')
-//         })
-//     })
-// }
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
+            tabContents.forEach((tabContent) => {
+                tabContent.classList.remove('active')
+            });
+            tabs.forEach((tab) => {
+                tab.classList.remove('active')
+            });
+            target.classList.add('active')
+            tab.classList.add('active')
+        })
+    })
+}
 
 function isModal(){
     let body = document.querySelector('body');

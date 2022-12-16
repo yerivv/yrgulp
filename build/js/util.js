@@ -52,25 +52,26 @@ function accordions(a) {
   var wrap = a.closest('.accordion_wrap');
   wrap.childNodes[1].classList.toggle('on');
 } //탭구현
-// const tabInit = (a) => {
-//     let tabWrap = document.querySelector(a);
-//     let tabs = tabWrap.querySelectorAll('.menu_tab li');
-//     let tabContents = tabWrap.querySelectorAll('.contents_tab .content');
-//     tabs.forEach((tab) => {
-//         tab.addEventListener('click', () => {
-//             const target = tabWrap.querySelector('#'+tab.dataset.tabTarget)
-//             tabContents.forEach((tabContent) => {
-//                 tabContent.classList.remove('active')
-//             });
-//             tabs.forEach((tab) => {
-//                 tab.classList.remove('active')
-//             });
-//             target.classList.add('active')
-//             tab.classList.add('active')
-//         })
-//     })
-// }
 
+
+var tabInit = function tabInit(a) {
+  var tabWrap = document.querySelector(a);
+  var tabs = tabWrap.querySelectorAll('.menu_tab li');
+  var tabContents = tabWrap.querySelectorAll('.contents_tab .content');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var target = tabWrap.querySelector('#' + tab.dataset.tabTarget);
+      tabContents.forEach(function (tabContent) {
+        tabContent.classList.remove('active');
+      });
+      tabs.forEach(function (tab) {
+        tab.classList.remove('active');
+      });
+      target.classList.add('active');
+      tab.classList.add('active');
+    });
+  });
+};
 
 function isModal() {
   var body = document.querySelector('body');

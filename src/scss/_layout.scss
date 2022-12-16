@@ -97,7 +97,7 @@
 .menu_icon_list .brand {background-image:url(../imgs/global/icon_brand.png);}
 .menu_icon_list .regular {background-image:url(../imgs/global/icon_regular.png);}
 .menu_icon_list .bundle {background-image:url(../imgs/global/icon_bundle.png);}
-.menu_icon_list .timesale {background-image:url(../imgs/global/icon_time.png);}
+.menu_icon_list .timesale {background-image:url(../imgs/global/icon_time2.png);}
 .menu_icon_list .special {background-image:url(../imgs/global/icon_special.png);}
 .menu_icon_list .groupbuying {background-image:url(../imgs/global/icon_group.png);}
 .menu_icon_list .showroom {background-image:url(../imgs/global/icon_room.png);}
@@ -106,7 +106,6 @@
 .menu_icon_list .order {background-image:url(../imgs/global/icon_delivery.png);}
 
 /* 간편장부 */
-// .layer_ledger {position:fixed;bottom:0;left:0;z-index:4;width:100%;background-color:#fff;}
 #layer {display:none;opacity:0;pointer-events:none;}
 #layer.open {display:block;opacity:1;pointer-events:auto;}
 #layer .dimd {position:fixed;left:0;top:0;z-index:6;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.6);}
