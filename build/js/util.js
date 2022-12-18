@@ -9,35 +9,29 @@ function setScreenSize() {
   var vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
 }
-
 setScreenSize();
 window.addEventListener('resize', setScreenSize);
 window.addEventListener('scroll', function () {
   var top = this.scrollY;
   var h = 30;
-
   if (top > h) {
     document.querySelector('body').classList.add('scroll');
   } else {
     document.querySelector('body').classList.remove('scroll');
   }
 });
-
 var floating = function floating(a) {
   var floating = document.querySelectorAll(a);
   var top = document.querySelector('#top');
   var talk = document.querySelector('#talk');
-
   if (floating.length > 0) {
     top.classList.add('have_bar');
     talk.classList.add('have_bar');
   }
 };
-
 function floatingMore(a) {
   var wrap = a.closest('.floating_btn');
   var text = wrap.querySelector('.more');
-
   if (wrap.classList.contains('active')) {
     wrap.classList.remove('active');
     text.innerText = '닫기';
@@ -45,15 +39,15 @@ function floatingMore(a) {
     wrap.classList.add('active');
     text.innerText = '닫기';
   }
-} //accordion
+}
 
-
+//accordion
 function accordions(a) {
   var wrap = a.closest('.accordion_wrap');
   wrap.childNodes[1].classList.toggle('on');
-} //탭구현
+}
 
-
+//탭구현
 var tabInit = function tabInit(a) {
   var tabWrap = document.querySelector(a);
   var tabs = tabWrap.querySelectorAll('.menu_tab li');
@@ -72,11 +66,9 @@ var tabInit = function tabInit(a) {
     });
   });
 };
-
 function isModal() {
   var body = document.querySelector('body');
   var modals = document.querySelectorAll('#modal.open');
-
   if (modals.length == 0) {
     body.classList.remove('ismodal');
     body.removeEventListener('scroll touchmove mousewheel', null);
@@ -84,7 +76,6 @@ function isModal() {
     body.classList.add('ismodal');
   }
 }
-
 function modalOpen(a) {
   var target = document.querySelector('.' + a);
   target.closest('body').classList.add('ismodal');
@@ -93,46 +84,48 @@ function modalOpen(a) {
     e.preventDefault();
   }, false);
 }
-
 function modalClose(a) {
   var target = document.querySelector('.' + a);
   target.classList.remove('open');
   isModal();
 }
-
 function layerOpen(a) {
   var target = document.querySelector('.' + a);
   target.classList.add('open');
   target.querySelector('.dimd').addEventListener('click', function () {
     target.classList.remove('open');
   });
-} //tooltip
+}
 
-
+//tooltip
 function tooltip(a) {
   var target = a.closest('.tooltip_wrap');
   var message = target.querySelector('.message_box');
   var arrow = document.createElement('span');
   arrow.className = 'arrow_down';
-
   if (target.classList.contains('active')) {
     target.classList.remove('active');
     target.querySelector('.arrow_down').remove();
   } else {
     target.classList.add('active');
     target.append(arrow);
+    setTimeout(function () {
+      if (target.offsetLeft + message.offsetWidth / 2 < 216) {
+        message.style.cssText = 'left:-' + (target.offsetLeft - 8) + 'px;margin:0;';
+      } else if (target.offsetLeft + message.offsetWidth / 2 > window.outerWidth) {
+        message.style.cssText = 'left:auto;right:0;margin:0;';
+      } else {}
+      console.log(target.offsetLeft + message.offsetWidth / 2, target.offsetLeft);
+    }, 500);
   }
-
   var close = target.querySelector('.close').addEventListener('click', function () {
     target.classList.remove('active');
     arrow.remove();
   });
 }
-
 var controlCate = function controlCate() {
   var target = document.querySelector('.category_tab');
   var text = target.querySelector('.text');
-
   if (target.classList.contains('init')) {
     target.classList.remove('init');
     text.innerText = '닫기';
@@ -141,32 +134,28 @@ var controlCate = function controlCate() {
     text.innerText = '열기';
   }
 };
-
 function cateReady() {
   var wrap = document.querySelector('.category_tab');
   var cate = wrap.querySelector('.list');
   var total = cate.childElementCount;
   var text = wrap.querySelector('.text');
-
   if (total < 4) {
     wrap.classList.add('minimum');
   } else {
     wrap.classList.remove('minimum');
   }
-
   if (cate.querySelector('li:nth-child(n+3)').classList.contains('active')) {
     wrap.classList.remove('init');
     text.innerText = '닫기';
   } else {
     console.log('1');
   }
-} //간편장부
+}
 
-
+//간편장부
 function ledger(a) {
   var li = a.closest('li');
   var target = document.querySelector('.layer_ledger');
-
   if (li.classList.contains('active')) {
     target.classList.remove('open');
     li.classList.remove('active');
@@ -178,7 +167,9 @@ function ledger(a) {
       li.classList.remove('active');
     });
   }
-} // let lastScroll = document.documentElement.scrollTop || 0;
+}
+
+// let lastScroll = document.documentElement.scrollTop || 0;
 // let isScrolling;
 // document.addEventListener('scroll', getScrollDirection, false);
 // function getScrollDirection() {
@@ -187,6 +178,7 @@ function ledger(a) {
 //     const body = document.querySelector('body');
 //     const toolbar = document.querySelectorAll('#toolbar');
 //     const floating = document.querySelectorAll('#floating');
+
 //     if(toolbar.length>0 || floating.length>0){
 //         if (scrollTop > lastScroll) {
 //             toolbar.classList.remove('up');
@@ -200,7 +192,9 @@ function ledger(a) {
 //         }
 //         lastScroll = scrollTop;
 //     }
+
 //     window.clearTimeout( isScrolling );
+
 // 	isScrolling = setTimeout(function() {
 // 		console.log( '스크롤 멈춤' );
 // 	}, 66);

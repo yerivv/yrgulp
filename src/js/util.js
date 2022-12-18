@@ -115,6 +115,16 @@ function tooltip(a){
 	} else {
 		target.classList.add('active');
 		target.append(arrow);
+        setTimeout(function(){
+            if(target.offsetLeft+(message.offsetWidth/2)<216){
+                message.style.cssText = 'left:-'+(target.offsetLeft-8)+'px;margin:0;';
+            }else if(target.offsetLeft+(message.offsetWidth/2)>window.outerWidth){
+                message.style.cssText = 'left:auto;right:0;margin:0;';
+            }else{
+                
+            }
+            console.log(target.offsetLeft+(message.offsetWidth/2),target.offsetLeft);
+        },500);
 	}
 	
 	const close = target.querySelector('.close').addEventListener('click', function(){
