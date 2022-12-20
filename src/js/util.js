@@ -9,15 +9,15 @@ function setScreenSize(){
 setScreenSize();
 window.addEventListener('resize', setScreenSize);
 
-window.addEventListener('scroll', function() {
-    const top = this.scrollY;
-    let h = 30;
-    if(top > h){
-        document.querySelector('body').classList.add('scroll');
-    } else {
-        document.querySelector('body').classList.remove('scroll');
-    }
-});
+// window.addEventListener('scroll', function() {
+//     const top = this.scrollY;
+//     let h = 30;
+//     if(top > h){
+//         document.querySelector('body').classList.add('scroll');
+//     } else {
+//         document.querySelector('body').classList.remove('scroll');
+//     }
+// });
 
 const floating = (a) => {
     let floating = document.querySelectorAll(a);
@@ -184,33 +184,38 @@ function ledger(a){
     }
 }
 
-// let lastScroll = document.documentElement.scrollTop || 0;
-// let isScrolling;
-// document.addEventListener('scroll', getScrollDirection, false);
-// function getScrollDirection() {
-//     let scrollTop = document.documentElement.scrollTop;
-//     let start = 30;
-//     const body = document.querySelector('body');
-//     const toolbar = document.querySelectorAll('#toolbar');
-//     const floating = document.querySelectorAll('#floating');
+let lastScroll = document.documentElement.scrollTop || 0;
+let isScrolling;
+document.addEventListener('scroll', getScrollDirection, false);
+function getScrollDirection() {
+    let scrollTop = document.documentElement.scrollTop;
+    let height = window.innerHeight;
+    let start = 30;
+    const body = document.querySelector('body');
+    const toolbar = document.querySelectorAll('#toolbar');
+    const floating = document.querySelectorAll('#floating');
+    const scrollHeight = document.querySelector('body').scrollHeight;
 
-//     if(toolbar.length>0 || floating.length>0){
-//         if (scrollTop > lastScroll) {
-//             toolbar.classList.remove('up');
-//             //body.classList.remove('scroll');
-//             console.log('dowm')
-//         }
-//         else {
-//             //toolbar.classList.add('up');
-//             //document.querySelector('body').classList.add('scroll');
-//             console.log('up')
-//         }
-//         lastScroll = scrollTop;
-//     }
+    if(toolbar.length>0 || floating.length>0){
+        if (scrollTop >= lastScroll) {
+            document.querySelector('#toolbar').classList.add('down');
+            console.log('down')
+        }
+        else {
+            document.querySelector('#toolbar').classList.remove('down');
+            console.log('up')
+        }
+        lastScroll = scrollTop;
+    }
     
-//     window.clearTimeout( isScrolling );
+    //맨 아래를 탐지
+    if(scrollTop + height >= scrollHeight || scrollTop == 0){
+        document.querySelector('#toolbar').classList.remove('down');
+    }
 
-// 	isScrolling = setTimeout(function() {
-// 		console.log( '스크롤 멈춤' );
-// 	}, 66);
-// }
+    window.clearTimeout( isScrolling );
+
+	isScrolling = setTimeout(function() {
+		console.log( '스크롤 멈춤' );
+	}, 66);
+}
