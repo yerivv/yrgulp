@@ -5,6 +5,7 @@
 		"title":"KDSM 테스트"
 	})
 	<link rel="stylesheet" href="@@webRoot/css/kdsm.css">
+	<script src="@@webRoot/js/util.js"></script>
 </head>
 <body>
 
@@ -21,8 +22,6 @@
 				<a href="javascript:void(0);" onclick="modalOpen('modal_category')" class="btn btn_category">카테고리보기</a>
 			</div>
 		</div><!-- //topper -->
-		
-		@@include('@@webRoot/modal/modal_category.html')
 
 		<div id="gnb">
 			<div class="wrap">
@@ -55,6 +54,7 @@
 			</ul>
 		</div>
 
+		@@include('@@webRoot/modal/modal_category.html')
 		@@include('@@webRoot/modal/modal_ledger.html')
 		@@include('@@webRoot/modal/modal_mypage.html')
 		@@include('@@webRoot/modal/modal_allmenu.html')
@@ -129,6 +129,5 @@
 			setTimeout(gnbPosition, 100);
 		});
 	</script>
-	<script src="@@webRoot/js/util.js"></script>
 </body>
 </html>
