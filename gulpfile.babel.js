@@ -32,8 +32,8 @@ const routes = {
         dest: "build/css"
     },
     js: {
-        watch: "src/js/*.js",
-        src: "src/js/*.js",
+        watch: "src/js/**/*.js",
+        src: "src/js/**/*.js",
         dest: "build/js"
     },
     fonts: {
@@ -71,7 +71,7 @@ const gscss = () => gulp
 const gjs = () => gulp
     .src(routes.js.src)
     .pipe(babel())
-    .pipe(concat("util.js"))
+    //.pipe(concat("util.js"))
     .pipe(debug({title: 'debug js:'}))
     .pipe(gulp.dest(routes.js.dest));
 

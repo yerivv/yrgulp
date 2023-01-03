@@ -5,6 +5,7 @@
 		"title":"KDSM 테스트"
 	})
 	<link rel="stylesheet" href="@@webRoot/css/kdsm.css">
+	<script src="@@webRoot/js/util.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 			<h1><a href="#"><img src="@@webRoot/imgs/global/logo.png" alt="광동제약"></a></h1>
 			<div class="page_name_box">
 				<h2>장바구니</h2>
-				<a href="#" class="btn_history">이전 페이지 이동</a>
+				<a href="javascript:history.back()" class="btn_history">이전 페이지 이동</a>
 			</div>
 		</div><!-- //topper -->
 		<!-- 컨텐츠 박스 영역 -->
@@ -402,8 +403,10 @@
 			</div><!-- //page_order -->
 		</div><!-- //container -->
 
-		<div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
-		<div id="top" class="top"><a href="#" class="btn btn_top">TOP</a></div>
+		<div id="fixedBtn" class="hFloating">
+			<a href="#" class="btn btn_talk">채팅</a>
+			<a href="#" class="btn btn_top">TOP</a>
+		</div>
 
 		<!-- 하단 -->
 		<div id="footer">
@@ -444,9 +447,5 @@
 			</div>
 		</div><!-- //footer -->
 	</div><!-- //wrap -->
-	<script src="@@webRoot/js/util.js"></script>
-	<script>
-		floating('.floating_btn');
-	</script>
 </body>
 </html>

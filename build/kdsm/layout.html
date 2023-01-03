@@ -24,7 +24,6 @@
 				<a href="javascript:void(0);" onclick="modalOpen('modal_category')" class="btn btn_category">카테고리보기</a>
 			</div>
 		</div><!-- //topper -->
-<<<<<<< HEAD
 
 		<div id="gnb">
 			<div class="wrap">
@@ -45,8 +44,11 @@
 			<div style="height:500px;background-color: #eee;"></div>
 			<div style="height:500px;background-color:azure;"></div>
 		</div><!-- //container -->
-		<div id="talk" class="talk"><a href="#" class="btn btn_talk">채팅</a></div>
-		<div id="top" class="top"><a href="#" class="btn btn_top">TOP</a></div>
+
+		<div id="fixedBtn" class="top">
+			<a href="#" class="btn btn_talk">채팅</a>
+			<a href="#" class="btn btn_top">TOP</a>
+		</div>
 		<div id="toolbar">
 			<ul>
 				<li class="home active"><a href="#">홈</a></li>
@@ -57,9 +59,6 @@
 			</ul>
 		</div>
 
-=======
-		
->>>>>>> fb541e52de944dcd12ce05f8edf4779538b03502
 		<div id="modal" class="modalFull modal_category">
 	<div class="wrap">
 		<div class="head">
@@ -422,6 +421,8 @@
 			let gnbItem = gnbMenu.querySelectorAll('li');
 			let gnbActive = gnbWrap.querySelector('.active');
 			let sum = 0;
+
+			console.log(gnbActive)
 
 			if(gnbActive !== null){
 				gnbItem.forEach((item, index) => {
